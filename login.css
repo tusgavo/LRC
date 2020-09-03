@@ -75,7 +75,8 @@ img {
 }
 
 button {
-  color: #fff;
+  color: #fff !important;
+  text-decoration: none;
   width: 300px;
   height: 60px;
   /* background-image: linear-gradient(to bottom right, skyblue, darkblue); */
@@ -90,6 +91,11 @@ button {
   cursor: pointer;
   transition: all 0.3s ease;
   font-weight: bold;
+}
+
+a {
+  color: white;
+  text-decoration: none;
 }
 
 button:hover {
@@ -128,6 +134,7 @@ fieldset legend {
 .criarConta:hover {
   text-decoration: underline;
 }
+
 
 @media (max-width: 375px) {
   .form {
