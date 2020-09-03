@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atletas</title>
+    <link rel="stylesheet" href="./css/atleta.css" />
+    <link rel="shortcut icon" href="./assets/images/logo.ico" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/4e9705b432.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="cabecalhoPrincipal">
+        <div class="container">
+            <h1 class="cabecalhoPrincipal-titulo">
+                <a href="#"><img src="./assets/images/logo.png" width="100px" alt="" /></a>
+            </h1>
+
+            <nav class="cabecalhoPrincipal-nav">
+                <a class="cabecalhoPrincipal-nav-link" href="#">Equipe</a>
+                <a class="cabecalhoPrincipal-nav-link" href="atleta.html">Atletas</a>
+            </nav>
+            <a href="./login.html">
+                <span onclick="logout()">
+                    <i class="fas fa-sign-out-alt fa-2x" style="color: #fff"></i>
+                </span>
+            </a>
+        </div>
+    </header>
+    <br>
+    <main>
+        <div class="tabelaAtletas">
+            <div class="container">
+                <table class="table">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">Nº da camisa</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">CPF</th>
+                            <th scope="col">Posição</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Flavio Gomes Silva</td>
+                            <td>123.456.789-0</td>
+                            <td>Goleiro</td>
+                            <td><span onclick="remover()"><i class="fas icon fa-times fa-lg"></i></span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>José Aparecido Souza</td>
+                            <td>098.765.432-1</td>
+                            <td>Lateral</td>
+                            <td><span onclick="remover()"><i class="fas icon fa-times fa-lg"></i></span></td>
+
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Luiz Otavio Costa</td>
+                            <td>321.654.087-9</td>
+                            <td>Zagueiro</td>
+                            <td><span onclick="remover()"><i class="fas icon fa-times fa-lg"></i></span></td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="./js/script.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+</html>
