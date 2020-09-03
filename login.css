@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background-image: linear-gradient(
+    to top right,
+    rgb(135, 206, 235),
+    rgb(0, 0, 139)
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  padding: 10px 0 0;
+}
+
+.form {
+  width: 35rem;
+  height: 470px;
+  position: relative;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-radius: 15px;
+  padding: 0 15px 60px;
+  box-shadow: 0px 25px 36px 12px rgba(0, 0, 0, 0.51);
+}
+
+.form input {
+  width: 100%;
+  height: 50px;
+  padding: 20px 0 0 0;
+  color: #363636;
+  border: none;
+  background-color: #fff;
+  border-bottom: 2px solid darkblue;
+  outline: none;
+  padding-bottom: 5px ;
+}
+
+.form label {
+  transform: translateY(-50px);
+  pointer-events: none;
+}
+
+.contentEmail,
+.contentPass {
+  position: absolute;
+  top: 25px;
+  color: #9b9b9b;
+  transition: all 0.3s ease;
+}
+
+.form input:focus + .labelEmail .contentEmail,
+.form input:valid + .labelEmail .contentEmail {
+  transform: translateY(-100%);
+  font-size: 14px;
+  color: #333;
+}
+
+.form input:focus + .labelPass .contentPass,
+.form input:valid + .labelPass .contentPass {
+  transform: translateY(-100%);
+  font-size: 14px;
+  color: #333;
+}
+
+button {
+  color: #fff;
+  width: 300px;
+  height: 60px;
+  /* background-image: linear-gradient(to bottom right, skyblue, darkblue); */
+  background: darkblue;
+  border: none;
+  border-radius: 15px;
+  align-self: center;
+  margin-top: 30px;
+  justify-content: center;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+button:hover {
+  transform: translateY(7px);
+}
+
+h1 {
+  align-self: center;
+  color: #333333;
+  margin-bottom: 30px;
+  margin-top: 60px;
+}
+
+fieldset {
+  border-top: 1px solid #333;
+  width: 40%;
+  margin: 30px 0 0;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  display: block;
+  text-align: center;
+}
+
+fieldset legend {
+  padding: 5px 10px;
+}
+
+.criarConta {
+  text-decoration: none;
+  color: darkblue;
+  text-align: center;
+  margin: 20px 0 0;
+}
+
+.criarConta:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 375px) {
+  .form {
+    height: 100vh;
+    width: 100%;
+    border-radius: 0;
+  }
+
+  h1 {
+    margin-top: 150px;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 600px) {
+  .form {
+    width: 95%;
+  }
+}
