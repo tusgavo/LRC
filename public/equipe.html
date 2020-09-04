@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Atletas</title>
-    <link rel="stylesheet" href="./css/atleta.css" />
+    <title>Equipe</title>
+    <link rel="stylesheet" href="./css/equipe.css" />
     <link rel="shortcut icon" href="./assets/images/logo.ico" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
     <script src="https://kit.fontawesome.com/4e9705b432.js" crossorigin="anonymous"></script>
@@ -29,48 +29,28 @@
             </a>
         </div>
     </header>
-    <br>
+
     <main>
-        <div class="tabelaAtletas">
-            <div class="container">
-                <table class="table">
-                    <thead class="thead-light">
-                        <tr>
-                            <th scope="col">Nº da camisa</th>
-                            <th scope="col">Nome</th>
-                            <th scope="col">CPF</th>
-                            <th scope="col">Posição</th>
-                            <th scope="col"></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Flavio Gomes Silva</td>
-                            <td>123.456.789-0</td>
-                            <td>Goleiro</td>
-                            <td><span onclick="remover()"><i class="fas icon fa-times fa-lg"></i></span></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>José Aparecido Souza</td>
-                            <td>098.765.432-1</td>
-                            <td>Lateral</td>
-                            <td><span onclick="remover()"><i class="fas icon fa-times fa-lg"></i></span></td>
+        <center>
+            <div class="dadosEquipe">
+                <h1>Dados principais</h1>
+                <div class="dadosPrin">
+                    <img src="https://www.corinthians.com.br/assets/svg/corinthians.svg" width="200" alt="">
+                    <input type="text" class="inputDados" name="" placeholder="Nome da equipe:" id=""> <i class="fas fa-edit fa-1x" style="margin-left: -40px"></i></i>
+                    <input type="text" class="inputDados" name="" placeholder="Nome do responsável:" id=""> <i class="fas fa-edit fa-1x" style="margin-left: -40px"></i></i>
+                    <input type="text" class="inputDados" name="" placeholder="Telefone do resposável:" id=""> <i class="fas fa-edit fa-1x" style="margin-left: -40px"></i></i>
+                    <input type="text" class="inputDados" name="" placeholder="E-mail:" id=""> <i class="fas fa-edit fa-1x" style="margin-left: -40px"></i></i>
+                </div>
+                <hr>
+                <div class="dadosTecnicos">
+                    <h1 style="margin: 0 0 20px">Dados técnicos</h1>
+                    <input type="text" class="inputDados" name="" placeholder="Técnico:" id=""> <i class="fas fa-edit fa-1x" style="margin-left: -50px"></i></i>
+                    <input type="text" class="inputDados" name="" placeholder="Auxíliar técnico" id=""> <i class="fas fa-edit fa-1x" style="margin-left: -50px"></i></i>
+                    <input type="text" class="inputDados" name="" placeholder="Massagista:" id=""> <i class="fas fa-edit fa-1x" style="margin-left: -50px"></i></i>
 
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Luiz Otavio Costa</td>
-                            <td>321.654.087-9</td>
-                            <td>Zagueiro</td>
-                            <td><span onclick="remover()"><i class="fas icon fa-times fa-lg"></i></span></td>
-
-                        </tr>
-                    </tbody>
-                </table>
+                </div>
             </div>
-        </div>
+        </center>
     </main>
 </body>
 <script src="./js/script.js"></script>
