@@ -1,79 +1,128 @@
 header {
-    background-image: linear-gradient( to top right, rgb(135, 206, 235), rgb(0, 0, 139));
-    background-repeat: no-repeat;
+  background-image: linear-gradient(
+    to top right,
+    rgb(135, 206, 235),
+    rgb(0, 0, 139)
+  );
+  background-repeat: no-repeat;
 }
 
 .cabecalhoPrincipal {
-    padding: 20px 0 0;
-    box-shadow: 0px 8px 5px 0px rgba(171, 159, 171, 1);
+  padding: 20px 0 0;
+  box-shadow: 0px 8px 5px 0px rgba(171, 159, 171, 1);
 }
 
 .cabecalhoPrincipal-titulo {
-    font-weight: bold;
-    font-size: 2em;
-    margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 2em;
+  margin-bottom: 20px;
 }
 
 .cabecalhoPrincipal-titulo a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 .cabecalhoPrincipal-nav-link {
-    padding: 10px;
-    margin-bottom: 10px;
-    color: #fff;
-    text-decoration: none;
-    transition: 0.5s;
-    display: block;
-    border-bottom: 1px solid #9799a6;
-    font-weight: bold;
-    font-size: 17px;
+  padding: 10px;
+  margin-bottom: 10px;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.5s;
+  display: block;
+  border-bottom: 1px solid #9799a6;
+  font-weight: bold;
+  font-size: 17px;
 }
 
 .cabecalhoPrincipal-nav-link:hover {
-    text-decoration: none;
-    color: #fff;
+  text-decoration: none;
+  color: #fff;
 }
 
 .cabecalhoPrincipal .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0;
 }
 
 .cabecalhoPrincipal-nav {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .dadosEquipe {
-    background: -webkit-linear-gradient( left, rgb(0, 0, 139), rgb(135, 206, 235));
-    width: 90%;
-    margin: 50px 0;
-    padding: 0 0 20px 0;
+  background: -webkit-linear-gradient(left, rgb(0, 0, 139), rgb(135, 206, 235));
+  width: 90%;
+  margin: 50px 0;
+  padding: 50px 0;
 }
 
 .dadosPrin {
-    justify-content: space-around;
-    display: flex;
-    align-items: center;
-    padding: 30px 50px;
+  justify-content: space-around;
+  display: flex;
+  align-items: center;
+  padding: 30px 50px;
 }
 
 .inputDados {
-    width: 21%;
-    border-radius: 5px;
-    border: none;
-    height: 35px;
-    text-align: center;
-    margin: 0 20px;
+  width: 21%;
+  border-radius: 8px;
+  border: none;
+  height: 35px;
+  margin: 0 20px;
 }
 
 hr {
-    width: 50%;
-    border-color: black;
-    background-color: black;
-    height: 1px;
+  width: 50%;
+  border-color: black;
+  background-color: black;
+  height: 1px;
+}
+
+.tituloDadosPrin {
+    color: white;
+}
+
+.iconEdit {
+  cursor: pointer;
+}
+
+::-webkit-input-placeholder {
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+@media (max-width: 829px) {
+  .dadosEquipe {
+    padding: 40px 0;
+    margin: 10px 0 0;
+    width: 100%;
+  }
+
+  .dadosPrin {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .inputDados {
+    width: 90%;
+  }
+
+  .iconEdit {
+    margin: 8px 0 30px 5px !important;
+  }
+
+  .tituloDadosPrin {
+      margin-left: 20px;
+  }
+}
+
+@media (max-width: 320px) {
+    .tituloDadosPrin {
+        font-size: 35px;
+    }
+
 }

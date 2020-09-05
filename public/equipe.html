@@ -9,6 +9,8 @@
     <link rel="shortcut icon" href="./assets/images/logo.ico" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
     <script src="https://kit.fontawesome.com/4e9705b432.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
 </head>
 
 <body>
@@ -19,35 +21,45 @@
             </h1>
 
             <nav class="cabecalhoPrincipal-nav">
-                <a class="cabecalhoPrincipal-nav-link" href="equipe.html">Equipe</a>
-                <a class="cabecalhoPrincipal-nav-link" href="atleta.html">Atletas</a>
+                <a class="cabecalhoPrincipal-nav-link drop" href="equipe.html">Equipe</a>
+                <a class="cabecalhoPrincipal-nav-link drop" href="atleta.html">Atletas</a>
             </nav>
-            <a href="./login.html">
-                <span onclick="logout()">
-                    <i class="fas fa-sign-out-alt fa-2x" style="color: #fff"></i>
-                </span>
-            </a>
+            <i class="fas fa-sign-out-alt fa-2x" onclick="logout()" style="color: #fff; cursor: pointer;"></i>
+
         </div>
     </header>
 
     <main>
         <center>
             <div class="dadosEquipe">
-                <h1>Dados principais</h1>
+                <h1 class="tituloDadosPrin">Dados principais</h1>
+                <img src="https://www.corinthians.com.br/assets/svg/corinthians.svg" width="100" alt="">
+                <h2 style="color: white;">Corinthians <i class="fas fa-edit fa-sm" style="color: black; cursor: pointer;"></i></h2> 
                 <div class="dadosPrin">
-                    <img src="https://www.corinthians.com.br/assets/svg/corinthians.svg" width="200" alt="">
-                    <input type="text" class="inputDados" name="" placeholder="Nome da equipe:" id=""> <i class="fas fa-edit fa-1x" style="margin-left: -40px"></i></i>
-                    <input type="text" class="inputDados" name="" placeholder="Nome do responsável:" id=""> <i class="fas fa-edit fa-1x" style="margin-left: -40px"></i></i>
-                    <input type="text" class="inputDados" name="" placeholder="Telefone do resposável:" id=""> <i class="fas fa-edit fa-1x" style="margin-left: -40px"></i></i>
-                    <input type="text" class="inputDados" name="" placeholder="E-mail:" id=""> <i class="fas fa-edit fa-1x" style="margin-left: -40px"></i></i>
+
+                    <!-- <input type="text" id="nomeEquipe" class="inputDados" name="" placeholder="Nome da equipe:" id=""> 
+                    <i id="iconNomeEquipe" class="fas iconEdit fa-edit fa-lg" style="margin-left: -15px"></i></i> -->
+
+                    <input type="text" id="nomeResp" class="inputDados" name="" placeholder="Nome do responsável:" id=""> 
+                    <i id="iconNomeResp" class="fas iconEdit fa-edit fa-lg" style="font-size: 30px; color: black; margin-left: -100px"></i></i>
+                    
+                    <input type="text" id="telResp" class="inputDados" name="" placeholder="Telefone do resposável:" id=""> 
+                    <i id="iconTelResp" class="fas iconEdit fa-edit fa-lg" style="font-size: 30px; color: black; margin-left: -100px"></i></i>
+
+                    <input type="text" id="email" class="inputDados" name="" placeholder="E-mail:" id=""> 
+                    <i id="iconEmail" class="fas iconEdit fa-edit fa-lg" style="font-size: 30px; color: black; margin-left: -100px"></i></i>
                 </div>
                 <hr>
                 <div class="dadosTecnicos">
-                    <h1 style="margin: 0 0 20px">Dados técnicos</h1>
-                    <input type="text" class="inputDados" name="" placeholder="Técnico:" id=""> <i class="fas fa-edit fa-1x" style="margin-left: -50px"></i></i>
-                    <input type="text" class="inputDados" name="" placeholder="Auxíliar técnico" id=""> <i class="fas fa-edit fa-1x" style="margin-left: -50px"></i></i>
-                    <input type="text" class="inputDados" name="" placeholder="Massagista:" id=""> <i class="fas fa-edit fa-1x" style="margin-left: -50px"></i></i>
+                    <div class="container">
+                    <h1 style="margin: 0 0 20px; color: white;">Dados técnicos</h1>
 
+                    <input type="text" id="tecnico" class="inputDados" name="" placeholder="Técnico:" id=""> 
+                    <i id="iconTecn" class="fas iconEdit fa-edit fa-lg" style="font-size: 30px; color: black; margin-left: -20px"></i></i>
+
+                    <input type="text" id="auxTecn" class="inputDados" name="" placeholder="Auxíliar técnico" id=""> 
+                    <i id="iconAuxTecn" class="fas iconEdit fa-edit fa-lg" style="font-size: 30px; color: black; margin-left: -20px"></i></i>
+                </div>
                 </div>
             </div>
         </center>
