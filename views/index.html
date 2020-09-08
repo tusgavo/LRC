@@ -19,19 +19,73 @@
                 <a href="/"><img src="./assets/images/logo.png" width="100px" alt="" /></a>
             </h1>
 
+            <h1 class="textoPrin">Portal LRC</h1>
+
             <nav class="cabecalhoPrincipal-nav">
                 <a class="cabecalhoPrincipal-nav-link" href="/login">Login</a>
                 <a class="cabecalhoPrincipal-nav-link" href="/register">Cadastro</a>
             </nav>
+
         </div>
     </header>
     <main>
+        <center>
+            <h1 style="margin-top: 20px; color: rgb(71, 71, 71)">Confira as últimas notícias da região</h1>
+        </center>
         <div class="container">
+            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" style="margin: 20px 0">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
 
-        </div>
-
+                    <!-- Noticia 1 -->
+                    <div class="carousel-item active">
+                        <a href="">
+                            <img src="https://comandonoticia.com.br/wp-content/uploads/2020/01/primavera-copinha12-1-750x450.jpg" class="d-block w-100" alt="">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>NOTA OFICIAL – COVID-19</h5>
+                                <p>Conforme encontro realizado nessa tarde na sede da Federação Paulista de Futebol, os clubes votaram e decidiram em consenso pela paralisação da competição</p>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Noticia 2 -->
+                    <div class="carousel-item">
+                        <a href="">
+                            <img src="http://www.ecprimavera.com.br/wp-content/uploads/sites/236852/2020/04/7C9532A9-8A6B-4F0E-94BC-66F872033683-900x444.jpeg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>PRIMAVERA MANTÉM SALÁRIOS EM DIA E ELENCO TREINANDO EM CASA</h5>
+                                <p>Como é sabido por todos independente da profissão, o Novo Coronavìrus fechou o cerco em boa parte da Economia Mundial e atacou inclusive com duras paralisações no esporte</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="">
+                            <img src="http://www.ecprimavera.com.br/wp-content/uploads/sites/236852/2020/02/IMG_0050-900x444.jpg" class="d-block w-100" alt="">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>FANTASMA SOFRE GOL NO ULTIMO MINUTO</h5>
+                                <p>O Primavera não conseguiu somar pontos em Osasco nesta quarta-feira (12), pela Serie A-3 do Campeonato Paulista.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
     </main>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="../public/js/script.js"></script>
 </body>
 
 </html>
