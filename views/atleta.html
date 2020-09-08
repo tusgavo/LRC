@@ -1,63 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Atletas</title>
-    <link rel="stylesheet" href="./css/atleta.css" />
+    <link rel="stylesheet" href="/atleta.css" />
     <link rel="shortcut icon" href="./assets/images/logo.ico" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://kit.fontawesome.com/4e9705b432.js"
-      crossorigin="anonymous"
-    ></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/4e9705b432.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-  </head>
+</head>
 
-  <body>
+<body>
     <header class="cabecalhoPrincipal">
-      <div class="container">
-        <h1 class="cabecalhoPrincipal-titulo">
-          <a href="#"
-            ><img src="./assets/images/logo.png" width="100px" alt=""
-          /></a>
-        </h1>
+        <div class="container">
+            <h1 class="cabecalhoPrincipal-titulo">
+                <a href="#"><img src="./assets/images/logo.png" width="100px" alt="" /></a>
+            </h1>
 
-        <nav class="cabecalhoPrincipal-nav">
-          <a class="cabecalhoPrincipal-nav-link" href="equipe.html">Equipe</a>
-          <a class="cabecalhoPrincipal-nav-link" href="atleta.html">Atletas</a>
-        </nav>
-        <i class="fas fa-sign-out-alt fa-2x" onclick="logout()" style="color: #fff; cursor: pointer;"></i>
-      </div>
+            <nav class="cabecalhoPrincipal-nav">
+                <a class="cabecalhoPrincipal-nav-link" href="/equipe">Equipe</a>
+                <a class="cabecalhoPrincipal-nav-link" href="/atletas">Atletas</a>
+            </nav>
+            <i class="fas fa-sign-out-alt fa-2x" onclick="logout()" style="color: #fff; cursor: pointer;"></i>
+        </div>
     </header>
     <br />
     <main>
-      <div class="tabelaAtletas">
-        <div class="container">
-          <table class="table">
-            <thead class="thead-light">
-              <tr>
-                <th scope="col">Nº da camisa</th>
-                <th scope="col">Nome do atleta</th>
-                <th scope="col" class="cpf">CPF</th>
-                <th scope="col">Posição</th>
-                <th scope="col"></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Flavio Gomes Silva</td>
-                <td class="cpf">123.456.789-0</td>
-                <td>Goleiro</td>
-                <td class="editDelete">
-                  <i class="fa fa-pencil" style="color: green; margin: 0 10px 0; cursor: pointer;" aria-hidden="true"></i>
-                    <i class="fas icon fa-times delete fa-lg" onclick="deletar()"></i
+        <div class="tabelaAtletas">
+            <div class="container">
+                <table class="table">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">Nº da camisa</th>
+                            <th scope="col">Nome do atleta</th>
+                            <th scope="col" class="cpf">CPF</th>
+                            <th scope="col">Posição</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Flavio Gomes Silva</td>
+                            <td class="cpf">123.456.789-0</td>
+                            <td>Goleiro</td>
+                            <td class="editDelete">
+                                <i class="fa fa-pencil" style="color: green; margin: 0 10px 0; cursor: pointer;" aria-hidden="true"></i>
+                                <i class="fas icon fa-times delete fa-lg" onclick="deletar()"></i
                   >
                 </td>
               </tr>
@@ -68,7 +59,7 @@
                 <td>Lateral</td>
                 <td class="editDelete">
                   <i class="fa fa-pencil edit" style="color: green; margin: 0 10px 0; cursor: pointer;" aria-hidden="true"></i>
-                    <i class="fas icon fa-times delete fa-lg" onclick="deletar()"></i
+                                <i class="fas icon fa-times delete fa-lg" onclick="deletar()"></i
                   >
                 </td>
               </tr>
@@ -79,7 +70,7 @@
                 <td>Zagueiro</td>
                 <td class="editDelete">
                   <i class="fa fa-pencil edit" style="color: green; margin: 0 10px 0; cursor: pointer;" aria-hidden="true"></i>
-                  <i class="fas icon fa-times delete fa-lg" onclick="deletar()"></i
+                                <i class="fas icon fa-times delete fa-lg" onclick="deletar()"></i
                   >
                 </td>
               </tr>

@@ -184,6 +184,11 @@ body {
     display: none;
 }
 
+a {
+    color: #fff !important;
+    text-decoration: none !important;
+}
+
 @media (max-width: 1200px) {
     .desktop {
         display: none;
