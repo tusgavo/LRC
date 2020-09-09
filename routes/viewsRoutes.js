@@ -25,4 +25,16 @@ router.get("/atletas", (req, res) => {
     res.render("atleta");
 });
 
+router.get("/noticia1", (req, res) => {
+    res.render("noticia1");
+});
+
+router.get("/noticia2", (req, res) => {
+    res.render("noticia2");
+});
+
+router.get("/noticia3", (req, res) => {
+    res.render("noticia3");
+});
+
 module.exports = router;
