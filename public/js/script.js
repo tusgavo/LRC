@@ -84,7 +84,3 @@ if (logado != true) {
   window.location.href = "login";
 }
 localStorage.clear();
-
-window.onbeforeunload = function () {
-  localStorage.setItem("acesso", true);
-};
