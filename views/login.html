@@ -1,39 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/login.css" />
     <title>Login</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <link rel="shortcut icon" href="./assets/images/logo.ico" />
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="form">
-        <center>
-            <a href="/">
-                <img src="./assets/images/logo.png" width="150px" alt="" />
-            </a>
-        </center>
-        <input type="text" name="" id="email" required />
-        <label for="pass" class="labelPass">
+      <center>
+        <a href="/">
+          <img src="./assets/images/logo.png" width="150px" alt="" />
+        </a>
+      </center>
+      <input type="text" name="" id="email" required />
+      <label for="pass" class="labelPass">
         <span class="contentPass">Email</span>
       </label>
-        <input type="password" name="senha" id="senha" required />
-        <label for="pass" class="labelPass">
+      <input type="password" name="senha" id="senha" required />
+      <label for="pass" class="labelPass">
         <span class="contentPass">Senha</span>
       </label>
-        <button class="btn">
-        <span> <a href="/equipe">Login</a></span>
+      <button id="botaoLogin" class="btn" onclick="logar()">
+        <span>Login</span>
       </button>
-        <center>
-            <fieldset>
-                <legend>ou</legend>
-            </fieldset>
-        </center>
-        <a href="/register" class="criarConta">crie sua conta</a>
+      <center>
+        <fieldset>
+          <legend>ou</legend>
+        </fieldset>
+      </center>
+      <a href="/register" class="criarConta">crie sua conta</a>
     </div>
-</body>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"
+  ></script>
 
+  <script src="js/login.js"></script>
 </html>

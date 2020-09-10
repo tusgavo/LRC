@@ -63,12 +63,28 @@ function deletar() {
 }
 
 function logout() {
-  Swal.fire({
-    title: "Confirmar saída?",
-    icon: "warning",
-    showCancelButton: true,
-    confirmButtonColor: "#3085d6",
-    cancelButtonColor: "#d33",
-    confirmButtonText: "Sim",
-  });
+  // Swal.fire({
+  //   title: "Confirmar saída?",
+  //   icon: "warning",
+  //   showCancelButton: true,
+  //   confirmButtonColor: "#3085d6",
+  //   cancelButtonColor: "#d33",
+  //   confirmButtonText: "Sim",
+  // });
+  window.location.href = "login";
 }
+
+// Auth
+var logado = false;
+if (localStorage.getItem("acesso") == "true") {
+  logado = true;
+}
+
+if (logado != true) {
+  window.location.href = "login";
+}
+localStorage.clear();
+
+window.onbeforeunload = function () {
+  localStorage.setItem("acesso", true);
+};
