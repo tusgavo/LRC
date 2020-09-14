@@ -37,3 +37,14 @@ document.getElementById("iconAuxTecn").addEventListener("click", function() {
   document.getElementById("auxTecn").disabled = false;
   document.getElementById("auxTecn").focus();
 });
+
+//Auth
+var logado = false;
+if (localStorage.getItem("acesso") == "true") {
+  logado = true;
+}
+
+if (logado != true) {
+  window.location.href = "login";
+}
+localStorage.clear();
