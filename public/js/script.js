@@ -6,7 +6,6 @@
 //   document.getElementById("nomeEquipe").focus();
 // });
 
-
 function deletar() {
   Swal.fire({
     title: "Você tem certeza?",
@@ -15,8 +14,8 @@ function deletar() {
     showCancelButton: true,
     confirmButtonColor: "#3085d6",
     cancelButtonColor: "#d33",
-    confirmButtonText: "Sim, excluir!",
-  }).then((result) => {
+    confirmButtonText: "Sim, excluir!"
+  }).then(result => {
     if (result.value) {
       Swal.fire("Excluido!", "Seu arquivo foi deletado.", "success");
     }

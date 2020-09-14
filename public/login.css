@@ -44,7 +44,7 @@ img {
   background-color: #fff;
   border-bottom: 2px solid darkblue;
   outline: none;
-  padding-bottom: 5px ;
+  padding-bottom: 5px;
 }
 
 .form label {
@@ -134,7 +134,6 @@ fieldset legend {
 .criarConta:hover {
   text-decoration: underline;
 }
-
 
 @media (max-width: 375px) {
   .form {

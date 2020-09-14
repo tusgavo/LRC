@@ -1,4 +1,4 @@
-const con = require("../helpers/connection");
+const connection = require("../helpers/connection");
 
 class AtletasDAO {
   static obterAtletas() {

@@ -7,7 +7,7 @@ function logar() {
   } else {
     Swal.fire({
       icon: "error",
-      text: "Usuário ou senha incorretos!",
+      text: "Usuário ou senha incorretos!"
     });
     email.value = "";
     senha.value = "";

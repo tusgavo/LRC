@@ -1,85 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cadastro</title>
     <link rel="stylesheet" href="/cadastro.css" />
     <link rel="shortcut icon" href="./assets/images/logo.ico" />
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
-    <script src="https://kit.fontawesome.com/4e9705b432.js" crossorigin="anonymous"></script>
+    <link
+      href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+    <script
+      src="https://kit.fontawesome.com/4e9705b432.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-</head>
-
-<body>
+  <body>
     <div class="container register">
-        <div class="row">
-            <div class="col-md-3 register-left">
-                <img src="./assets/images/logo.png" alt="Logo" />
-                <h3>Bem vindo!</h3>
-                <p>Já tem seu login?</p>
-                <form>
-                    <a href="/login">
-                        <input type="submit" class="login" name="" value="Login" />
-                    </a>
-                </form>
-                <br />
-            </div>
-            <div class="col-md-9 register-right form">
-                <div class="tab-content" id="myTabContent">
-                    <form>
-                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                            <h3 class="register-heading">Crie sua conta</h3>
-                            <div class="row register-form">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="col-sm-12 col-md-12">
-                                            <input type="text" name="nomeEq" id="nomeEq" class="inputContent" required />
-                                            <label for="nomeEq" class="labelEmail">
-                                                <span class="contentEmail">Nome da equipe</span>
-                                            </label>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <div class="col-sm-12 col-md-12">
-                                                <input type="text" name="email" id="email" class="inputContent" required />
-                                                <label for="email" class="labelEmail">
-                                                    <span class="contentEmail">E-mail</span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="col-sm-12 col-md-12">
-                                            <input type="password" name="senha" id="senha" class="inputContent" required />
-                                            <label for="email" class="labelEmail">
-                                                <span class="contentEmail">Senha</span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-sm-12 col-md-12" style="margin-top: -16px;">
-                                            <input type="password" name="confirmSenha" id="confirmSenha" class="inputContent" required />
-                                            <label for="confirmSenha" class="labelEmail">
-                                                <span class="contentEmail">Confirmar senha</span>                        
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <button class="btnRegister"><a href="/contRegister">Continuar <i class="fas icon fa-angle-right fa-lg"></i></a>   </button>
-                                    <!-- <input type="submit" class="btnRegister" value="Cadastre-se" /> -->
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+      <div class="row">
+        <div class="col-md-3 register-left">
+          <img src="./assets/images/logo.png" alt="Logo" />
+          <h3>Bem vindo!</h3>
+          <p>Já tem seu login?</p>
+          <form>
+            <a href="/login">
+              <input type="submit" class="login" name="" value="Login" />
+            </a>
+          </form>
+          <br />
         </div>
+        <div class="col-md-9 register-right form">
+          <div class="tab-content" id="myTabContent">
+            <form>
+              <div
+                class="tab-pane fade show active"
+                id="home"
+                role="tabpanel"
+                aria-labelledby="home-tab"
+              >
+                <h3 class="register-heading">Crie sua conta</h3>
+                <div class="row register-form">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <div class="col-sm-12 col-md-12">
+                        <input
+                          type="text"
+                          name="nomeEq"
+                          id="nomeEq"
+                          class="inputContent"
+                          required
+                        />
+                        <label for="nomeEq" class="labelEmail">
+                          <span class="contentEmail">Nome da equipe</span>
+                        </label>
+                      </div>
+
+                      <div class="form-group">
+                        <div class="col-sm-12 col-md-12">
+                          <input
+                            type="text"
+                            name="email"
+                            id="email"
+                            class="inputContent"
+                            required
+                          />
+                          <label for="email" class="labelEmail">
+                            <span class="contentEmail">E-mail</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <div class="col-sm-12 col-md-12">
+                        <input
+                          type="password"
+                          name="senha"
+                          id="senha"
+                          class="inputContent"
+                          required
+                        />
+                        <label for="email" class="labelEmail">
+                          <span class="contentEmail">Senha</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div
+                        class="col-sm-12 col-md-12"
+                        style="margin-top: -16px;"
+                      >
+                        <input
+                          type="password"
+                          name="confirmSenha"
+                          id="confirmSenha"
+                          class="inputContent"
+                          required
+                        />
+                        <label for="confirmSenha" class="labelEmail">
+                          <span class="contentEmail">Confirmar senha</span>
+                        </label>
+                      </div>
+                    </div>
+                    <button class="btnRegister">
+                      <a href="/contRegister"
+                        >Continuar <i class="fas icon fa-angle-right fa-lg"></i
+                      ></a>
+                    </button>
+                    <!-- <input type="submit" class="btnRegister" value="Cadastre-se" /> -->
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-</body>
-
+  </body>
 </html>
