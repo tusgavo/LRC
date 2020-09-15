@@ -47,4 +47,3 @@ if (localStorage.getItem("acesso") == "true") {
 if (logado != true) {
   window.location.href = "login";
 }
-localStorage.clear();

@@ -32,4 +32,5 @@ function logout() {
   //   confirmButtonText: "Sim",
   // });
   window.location.href = "login";
+  localStorage.clear();
 }
