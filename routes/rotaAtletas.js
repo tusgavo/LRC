@@ -6,4 +6,8 @@ routers.get("/", (req, res) => {
   AtletasDAO.obterAtletas();
 });
 
+routers.delete('/:id', (req, res) => {
+ AtletasDAO.deletarAtleta(req.params.id);
+})
+
 module.exports = routers;

@@ -8,6 +8,13 @@ class AtletasDAO {
       res.json(res);
     });
   }
+  static deletarAtleta(id) {
+    const sql = "DELETE FROM atletas WHERE id =? ",id;
+    connection.query(sql, (err, res) => {
+      if (err) throw err;
+      res.json(res);
+    });
+  }
 }
 
 module.exports = AtletasDAO;
