@@ -24,8 +24,7 @@ function atualiza() {
           <td>${atleta.nome}</td> 
           <td class="cpf">${atleta.cpf}</td>
           <td>${atleta.posicao}</td>
-          <td class="editDelete">
-            <i class="fa fa-pencil" style="color: green; margin: 0 10px 0; cursor: pointer;" aria-hidden="true"></i>
+          <td>
             <i class="fas icon fa-times delete fa-lg" onclick="deletar(${atleta.id})"></i>
           </td>
       </tr>`

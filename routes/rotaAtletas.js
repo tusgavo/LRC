@@ -8,6 +8,10 @@ routers.get("/", (req, res) => {
 
 routers.delete('/:id', (req, res) => {
  AtletasDAO.deletarAtleta(req.params.id);
+});
+
+routers.post("/", (req, res) => {
+  AtletasDAO.enviarAtleta();
 })
 
 module.exports = routers;

@@ -34,7 +34,7 @@
                 <table class="table">
                     <thead class="thead-light">
                         <tr>
-                            <th scope="col">Nº da camisa</th>
+                            <th scope="col" class="numCamisa">Nº da camisa</th>
                             <th scope="col">Nome do atleta</th>
                             <th scope="col" class="cpf">CPF</th>
                             <th scope="col">Posição</th>
@@ -42,7 +42,16 @@
                         </tr>
                     </thead>
                     <tbody id="tabela">
-                        
+                      <tr>
+                        <th scope="row" class="numCamisa">${atleta.id}</th>
+                        <td >${atleta.nome}</td> 
+                        <td class="cpf">${atleta.cpf}</td>
+                        <td>${atleta.posicao}</td>
+                        <td class="editDelete">
+                          <i class="fas icon fa-times delete fa-lg" onclick="deletar()"></i>
+                        </td>
+                    </tr> 
+                    
                     </tbody>
                   </table>
           <button

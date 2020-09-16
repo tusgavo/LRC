@@ -141,19 +141,15 @@ header {
   .edit {
     margin-top: -20px;
   }
+
+  .numCamisa {
+    display: none;
+  }
 }
 
 @media (max-width: 367px) {
-  .editDelete {
-    display: block;
-  }
-  .delete {
-    margin-left: 10px;
-  }
   .table {
-    display: grid;
-  }
-  th {
-    display: none;
+    width: 90%;
+
   }
 }
