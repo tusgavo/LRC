@@ -14,15 +14,6 @@ app.use("/", require("./routes/viewsRoutes"));
 
 app.use(bodyParser.json());
 
-con.connect(err => {
-  if (!err) {
-    console.log("DB conectada");
-  } else {
-    console.log(
-      "Falha de conexão na DB \n Erro: " + JSON.stringify(err, undefined, 2)
-    );
-  }
-});
 
 app.get("/atletasBack", (req, res) => {
   con.query("SELECT * FROM atletas", (err, rows) => {

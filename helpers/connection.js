@@ -6,4 +6,15 @@ const con = mysql.createConnection({
   database: "lrc"
 });
 
+con.connect(err => {
+  if (!err) {
+    console.log("DB conectada");
+  } else {
+    console.log(
+      "Falha de conexão na DB \n Erro: " + JSON.stringify(err, undefined, 2)
+    );
+  }
+});
+
+
 module.exports = con;
