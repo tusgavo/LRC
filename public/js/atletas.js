@@ -11,21 +11,20 @@ if (logado != true) {
 let listaDeAtletas = [];
 let tabela = document.getElementById("tabela");
 function atualiza() {
-  fetch("/rotaAtletas")
+  fetch("/atletasBack")
     .then((res) => res.json())
     .then((dados) => {
-      console.log(dados);
       listaDeAtletas = dados;
       tabela.innerHTML = listaDeAtletas
         .map(
           (atleta, i) => `
       <tr>
-          <th scope="row">${atleta.id}</th>
-          <td>${atleta.nome}</td> 
+          <th scope="row" class="numCamisa">${atleta.id_atleta}</th>
+          <td>${atleta.nomeAtleta}</td> 
           <td class="cpf">${atleta.cpf}</td>
           <td>${atleta.posicao}</td>
           <td>
-            <i class="fas icon fa-times delete fa-lg" onclick="deletar(${atleta.id})"></i>
+            <i class="fas icon fa-times delete fa-lg" onclick="deletarAtleta(${atleta.id})"></i>
           </td>
       </tr>`
         )
@@ -34,8 +33,36 @@ function atualiza() {
 }
 atualiza();
 
-function deletar(id) {
-  fetch("/rotaAtletas/" + id, {
-    method: "DELETE",
+// function deletar(id) {
+//   fetch("/atletasBack/" + id, {
+//     method: "DELETE",
+//   });
+// }
+
+function deletarAtleta(id_atleta) {
+  Swal.fire({
+    title: "Atenção!",
+    text: "Essa Ação não poderá ser Desfeita!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "rgb(68, 103, 255)",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Excluir",
+  }).then((result) => {
+    if (result.value) {
+      fetch("/atletasBack/" + id_atleta, {
+        method: "DELETE",
+      }).then(
+        Swal.fire({
+          title: "Sucesso!",
+          text: "O atleta foi deletado!",
+          icon: "success",
+          showConfirmButton: false,
+        }),
+        setTimeout(function () {
+          window.location.reload();
+        }, 1000)
+      );
+    }
   });
 }
