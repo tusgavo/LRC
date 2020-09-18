@@ -5,6 +5,7 @@ class Teste {
   constructor(objTeste) {
     this.nome = "";
     this.senha = "";
+    this.email = "";
     Object.assign(this, objTeste);
   }
 }

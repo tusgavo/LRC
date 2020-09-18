@@ -11,7 +11,7 @@ if (logado != true) {
 let listaDeAtletas = [];
 let tabela = document.getElementById("tabela");
 function atualiza() {
-  fetch("/atletasBack")
+  fetch("/rotasAtletas")
     .then((res) => res.json())
     .then((dados) => {
       listaDeAtletas = dados;
@@ -36,7 +36,7 @@ atualiza();
 function addAtleta() {
   const formulario = document.getElementById("formLogin");
   const data = new URLSearchParams(new FormData(formulario));
-  fetch("/atletasBack", {
+  fetch("/rotasAtletas", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: data,

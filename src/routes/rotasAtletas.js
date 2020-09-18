@@ -1,44 +1,42 @@
 const express = require("express");
-const Atleta = require("../models/newAtleta");
-const BancoUtils = require("../helpers/bancoUtils");
 const Atletas = require("../models/newAtleta");
-// const segredo = "AluninhoFeliz";
+const BancoUtils = require("../helpers/bancoUtils");
 const routers = express.Router();
 
 routers.get("/", (req, res) => {
-  BancoUtils.select(Atleta.tabela, (atletas) => {
-    res.json(atletas);
+  BancoUtils.select(Atletas.tabela, (atletas1) => {
+    res.json(atletas1);
   });
 });
 
 routers.post("/", (req, res) => {
-  const teste = new Atleta(req.body);
-  atleta.senha = atleta.senha;
-  BancoUtils.insert(atleta, Atletas.tabela, (r) => {
+  const novoAtleta = new Atletas(req.body);
+  novoAtleta.senha = novoAtleta.senha;
+  BancoUtils.insert(atletas, Atletas.tabela, (r) => {
     res.json(r);
   });
 });
 
-routers.put("/", (req, res) => {
-  const testeNovo = new Teste(req.body);
-  BancoUtils.put(
-    testeNovo,
-    Teste.tabela,
-    { key: "id", value: testeNovo.id },
-    (r) => {
-      res.json(r);
-    }
-  );
-});
+// routers.put("/", (req, res) => {
+//   const atletaNovo = new Atletas(req.body);
+//   BancoUtils.put(
+//     atletaNovo,
+//     Atletas.tabela,
+//     { key: "id", value: atletaNovo.id },
+//     (r) => {
+//       res.json(r);
+//     }
+//   );
+// });
 
-routers.delete("/:id", (req, res) => {
-  BancoUtils.delete(
-    Teste.tabela,
-    { key: "id", value: req.params.id },
-    (r) => {
-      res.json(r);
-    }
-  );
-});
+// routers.delete("/:id", (req, res) => {
+//   BancoUtils.delete(
+//     Atletas.tabela,
+//     { key: "id", value: req.params.id },
+//     (r) => {
+//       res.json(r);
+//     }
+//   );
+// });
 
 module.exports = routers;

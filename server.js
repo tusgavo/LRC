@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const app = express();
 const rotasTeste = require("./src/routes/rotasTeste");
+const rotasAtletas = require("./src/routes/rotasAtletas");
 const con = require("./src/helpers/banco")
  
 app.use(cors());
@@ -11,7 +12,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
-app.get("/atletasBack", (req, res) => {
+app.get("/rotasAtletas", (req, res) => {
   con.query("SELECT * FROM atletas", (err, rows) => {
     if (!err) {
       res.send(rows);
@@ -58,6 +59,8 @@ app.get("/modal", (req, res) => {
 });
 
 app.use('/rotasTeste', rotasTeste);
+
+app.use('/rotasAtletas', rotasAtletas);
 
 app.listen(3000, () => {
   console.log("Servidor rodando");
