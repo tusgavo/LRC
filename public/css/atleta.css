@@ -67,7 +67,8 @@ header {
 }
 
 .form {
-  width: 100%;
+  width: 35rem;
+  height: 470px;
   position: relative;
   background-color: #fff;
   display: flex;
@@ -75,13 +76,14 @@ header {
   justify-content: flex-start;
   border-radius: 15px;
   padding: 0 15px 60px;
+  box-shadow: 0px 25px 36px 12px rgba(0, 0, 0, 0.51);
 }
 
 .form input {
   width: 100%;
   height: 50px;
   padding: 20px 0 0 0;
-  color: #363636;
+  color: black;
   border: none;
   background-color: #fff;
   border-bottom: 2px solid darkblue;
@@ -100,7 +102,6 @@ header {
   top: 25px;
   color: #9b9b9b;
   transition: all 0.3s ease;
-  font-size: 16px;
 }
 
 .form input:focus + .labelEmail .contentEmail,
@@ -116,7 +117,6 @@ header {
   font-size: 14px;
   color: darkblue;
 }
-
 .btn-primary {
   color: #fff !important;
   background-color: darkblue !important;

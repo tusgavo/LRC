@@ -33,36 +33,46 @@ function atualiza() {
 }
 atualiza();
 
+function addAtleta() {
+  const formulario = document.getElementById("formLogin");
+  const data = new URLSearchParams(new FormData(formulario));
+  fetch("/atletasBack", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: data,
+  });
+}
+
 // function deletar(id) {
 //   fetch("/atletasBack/" + id, {
 //     method: "DELETE",
 //   });
 // }
 
-function deletarAtleta(id_atleta) {
-  Swal.fire({
-    title: "Atenção!",
-    text: "Essa Ação não poderá ser Desfeita!",
-    icon: "warning",
-    showCancelButton: true,
-    confirmButtonColor: "rgb(68, 103, 255)",
-    cancelButtonColor: "#d33",
-    confirmButtonText: "Excluir",
-  }).then((result) => {
-    if (result.value) {
-      fetch("/atletasBack/" + id_atleta, {
-        method: "DELETE",
-      }).then(
-        Swal.fire({
-          title: "Sucesso!",
-          text: "O atleta foi deletado!",
-          icon: "success",
-          showConfirmButton: false,
-        }),
-        setTimeout(function () {
-          window.location.reload();
-        }, 1000)
-      );
-    }
-  });
-}
+// function deletarAtleta(id_atleta) {
+//   Swal.fire({
+//     title: "Atenção!",
+//     text: "Essa Ação não poderá ser Desfeita!",
+//     icon: "warning",
+//     showCancelButton: true,
+//     confirmButtonColor: "rgb(68, 103, 255)",
+//     cancelButtonColor: "#d33",
+//     confirmButtonText: "Excluir",
+//   }).then((result) => {
+//     if (result.value) {
+//       fetch("/atletasBack/" + id_atleta, {
+//         method: "DELETE",
+//       }).then(
+//         Swal.fire({
+//           title: "Sucesso!",
+//           text: "O atleta foi deletado!",
+//           icon: "success",
+//           showConfirmButton: false,
+//         }),
+//         setTimeout(function () {
+//           window.location.reload();
+//         }, 1000)
+//       );
+//     }
+//   });
+// }
