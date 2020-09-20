@@ -74,7 +74,7 @@ img {
   color: darkblue;
 }
 
-button {
+.button {
   color: #fff !important;
   text-decoration: none;
   width: 300px;
@@ -91,6 +91,7 @@ button {
   cursor: pointer;
   transition: all 0.3s ease;
   font-weight: bold;
+  padding: 7px;
 }
 
 a {
@@ -98,7 +99,7 @@ a {
   text-decoration: none;
 }
 
-button:hover {
+.button:hover {
   transform: translateY(7px);
 }
 

@@ -12,7 +12,7 @@ routers.get("/", (req, res) => {
 
 routers.post("/", (req, res) => {
   const teste = new Teste(req.body);
-  teste.senha = teste.senha;
+  // teste.senha = teste.senha;
   BancoUtils.insert(teste, Teste.tabela, (r) => {
     res.json(r);
   });
@@ -23,17 +23,17 @@ routers.put("/", (req, res) => {
   BancoUtils.put(
     testeNovo,
     Teste.tabela,
-    { key: "id", value: testeNovo.id },
+    { key: "id_atleta", value: testeNovo.id_atleta },
     (r) => {
       res.json(r);
     }
   );
 });
 
-routers.delete("/:id", (req, res) => {
+routers.delete("/:id_atleta", (req, res) => {
   BancoUtils.delete(
     Teste.tabela,
-    { key: "id", value: req.params.id },
+    { key: "id_atleta", value: req.params.id_atleta },
     (r) => {
       res.json(r);
     }

@@ -8,10 +8,29 @@ if (logado != true) {
   window.location.href = "login";
 }
 
+let modalCriacao = null;
+let modalEdicao = null;
+document.addEventListener("DOMContentLoaded", function () {
+  var elems = document.querySelectorAll(".modal");
+  var instances = M.Modal.init(elems, {});
+  modalEdicao = instances[0];
+  modalCriacao = instances[1];
+  modalDelecao = instances[2];
+});
+
+function abreModal() {
+  $(".modal").modal();
+}
+
+function mostraModalDelecao(i) {
+  $(".modal").modal();
+  // document.getElementById("dl-id").value = listaDeAtletas[i].id_atleta;
+}
+
 let listaDeAtletas = [];
 let tabela = document.getElementById("tabela");
 function atualiza() {
-  fetch("/rotasAtletas")
+  fetch("/rotasTeste")
     .then((res) => res.json())
     .then((dados) => {
       listaDeAtletas = dados;
@@ -24,7 +43,7 @@ function atualiza() {
           <td class="cpf">${atleta.cpf}</td>
           <td>${atleta.posicao}</td>
           <td>
-            <i class="fas icon fa-times delete fa-lg" onclick="deletarAtleta(${atleta.id})"></i>
+            <i class="fas icon fa-times delete fa-lg" onclick="mostraModalDelecao(${atleta.id})"></i>
           </td>
       </tr>`
         )
@@ -36,43 +55,16 @@ atualiza();
 function addAtleta() {
   const formulario = document.getElementById("formLogin");
   const data = new URLSearchParams(new FormData(formulario));
-  fetch("/rotasAtletas", {
+  fetch("/rotasTeste", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: data,
   });
 }
 
-// function deletar(id) {
-//   fetch("/atletasBack/" + id, {
-//     method: "DELETE",
-//   });
-// }
-
-// function deletarAtleta(id_atleta) {
-//   Swal.fire({
-//     title: "Atenção!",
-//     text: "Essa Ação não poderá ser Desfeita!",
-//     icon: "warning",
-//     showCancelButton: true,
-//     confirmButtonColor: "rgb(68, 103, 255)",
-//     cancelButtonColor: "#d33",
-//     confirmButtonText: "Excluir",
-//   }).then((result) => {
-//     if (result.value) {
-//       fetch("/atletasBack/" + id_atleta, {
-//         method: "DELETE",
-//       }).then(
-//         Swal.fire({
-//           title: "Sucesso!",
-//           text: "O atleta foi deletado!",
-//           icon: "success",
-//           showConfirmButton: false,
-//         }),
-//         setTimeout(function () {
-//           window.location.reload();
-//         }, 1000)
-//       );
-//     }
-//   });
-// }
+function deletarAtleta() {
+  const id = document.getElementById("dl-id").value;
+  fetch("/rotasTeste/" + id, {
+    method: "DELETE",
+  });
+}

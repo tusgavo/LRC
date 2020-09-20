@@ -1,11 +1,11 @@
-const express = require("express");
-const cors = require("cors");
 const bodyParser = require("body-parser");
-const path = require("path");
+const cors = require("cors");
+const con = require("./src/helpers/banco");
+const express = require("express");
 const app = express();
 const rotasTeste = require("./src/routes/rotasTeste");
-const rotasAtletas = require("./src/routes/rotasAtletas");
-const con = require("./src/helpers/banco")
+const rotasEquipes = require("./src/routes/rotasEquipes");
+const path = require("path");
  
 app.use(cors());
 app.use(bodyParser.json());
@@ -58,9 +58,13 @@ app.get("/modal", (req, res) => {
   res.sendFile(__dirname + "/public/modal.html");
 });
 
+app.get("/teste", (req, res) => {
+  res.sendFile(__dirname + "/public/teste.html");
+});
+
 app.use('/rotasTeste', rotasTeste);
 
-app.use('/rotasAtletas', rotasAtletas);
+app.use('/rotasEquipes', rotasEquipes);
 
 app.listen(3000, () => {
   console.log("Servidor rodando");

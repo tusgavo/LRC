@@ -54,6 +54,8 @@ header {
 .cabecalhoPrincipal-nav {
   display: flex;
   justify-content: space-between;
+  background: none;
+  box-shadow: none;
 }
 
 .table {
@@ -64,6 +66,11 @@ header {
 .icon {
   color: red;
   cursor: pointer;
+}
+
+.thead {
+  background-color: darkblue;
+  color: white;
 }
 
 .form {
@@ -124,32 +131,133 @@ header {
   margin-bottom: 30px;
 }
 
+.modal {
+  height: 60% !important;
+}
+
+.modal-close {
+  background-color: darkblue !important;
+}
+
+.modal-close:hover {
+  text-decoration: none;
+}
+
+.modalDeletar {
+  width: 40% !important;
+  height: 30% !important;
+}
+
+.modalEdit {
+  width: 50% !important;
+  height: 60% !important;
+}
+
+.btn {
+  margin-top: 25px;
+}
+
+.botaoAddAtleta {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.teste {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputEdit {
+  margin-bottom: 50px !important;
+}
+
 .editDelete {
   font-size: 22px;
 }
 
-@media (max-width: 767px) {
+.delete {
+  font-size: 25px !important;
+}
+
+.edit {
+  font-size: 22px !important;
+  margin-top: -2px !important;
+}
+
+.dropdown {
+  display: none;
+}
+
+.dropdownColor {
+  background-color: darkblue !important;
+  border-color: darkblue !important;
+}
+
+@media (max-width: 768px) {
   .table {
     width: 100%;
   }
-  .cpf {
-    display: none;
-  }
+
   .editDelete {
     display: flex;
   }
-  .edit {
-    margin-top: -20px;
+
+  .modalEdit {
+    width: 95% !important;
+    height: 57% !important;
   }
 
-  .numCamisa {
-    display: none;
+  .modalDeletar {
+    width: 90% !important;
+    height: 25% !important;
+  }
+
+  .teste {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .input-field {
+    margin-top: 20px !important;
+  }
+
+  .inputEdit {
+    margin-bottom: 40px !important;
   }
 }
 
 @media (max-width: 367px) {
   .table {
     width: 90%;
+  }
+}
 
+@media (max-width: 441px) {
+  .idAtleta {
+    display: none;
+  }
+
+  .cpf {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .dropdown{
+    display: block;
+    margin-top: -20px !important;
+  }
+
+  .dropdown-item {
+    font-size: 20px !important;
+    margin: 10px 0;
+  }
+
+  .cabecalhoPrincipal {
+    padding-bottom: 30px;
+  }
+
+  #iconExit, .cabecalhoPrincipal-nav {
+    display: none;
   }
 }

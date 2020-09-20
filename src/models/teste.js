@@ -1,11 +1,11 @@
 class Teste {
   static get tabela() {
-    return "teste";
+    return "atletas";
   }
   constructor(objTeste) {
-    this.nome = "";
-    this.senha = "";
-    this.email = "";
+    this.nomeAtleta = "";
+    this.cpf = "";
+    this.posicao = "";
     Object.assign(this, objTeste);
   }
 }
