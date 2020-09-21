@@ -20,7 +20,6 @@ routers.post("/auth", (req, res) => {
         { expiresIn: "24h" }
       );
       res.cookie("token", token).redirect("/equipe");
-      //res.json(token);
     } else {
       res.redirect(301, '/login')
     }
