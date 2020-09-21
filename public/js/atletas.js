@@ -1,13 +1,4 @@
 //Auth
-var logado = false;
-if (localStorage.getItem("acesso") == "true") {
-  logado = true;
-}
-
-if (logado != true) {
-  window.location.href = "login";
-}
-
 let modalCriacao = null;
 let modalEdicao = null;
 document.addEventListener("DOMContentLoaded", function () {

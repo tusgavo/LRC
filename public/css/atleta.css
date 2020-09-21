@@ -135,6 +135,10 @@ header {
   height: 60% !important;
 }
 
+.modal-content {
+  margin-top: 20px !important;
+}
+
 .modal-close {
   background-color: darkblue !important;
 }
@@ -145,12 +149,17 @@ header {
 
 .modalDeletar {
   width: 40% !important;
-  height: 30% !important;
+  height: 160px !important;
 }
 
 .modalEdit {
   width: 50% !important;
-  height: 60% !important;
+  height: 370px !important;
+}
+
+.modalAdd {
+  width: 50% !important;
+  height: 370px !important;
 }
 
 .btn {
@@ -167,9 +176,10 @@ header {
   flex-direction: column;
 }
 
-.inputEdit {
+.inputEdit, .inputAdd {
   margin-bottom: 50px !important;
 }
+
 
 .editDelete {
   font-size: 22px;
@@ -182,6 +192,10 @@ header {
 .edit {
   font-size: 22px !important;
   margin-top: -2px !important;
+}
+
+.edit:hover {
+  cursor: pointer;
 }
 
 .dropdown {

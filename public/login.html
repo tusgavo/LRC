@@ -17,37 +17,39 @@
   </head>
 
   <body>
-    <div class="form">
-      <center>
-        <a href="/">
-          <img src="./assets/images/logo.png" width="150px" alt="" />
-        </a>
-      </center>
-      <input type="text" name="" id="email" required />
-      <label for="pass" class="labelPass">
-        <span class="contentPass">Email</span>
-      </label>
-      <input type="password" name="senha" id="senha" required />
-      <label for="pass" class="labelPass">
-        <span class="contentPass">Senha</span>
-      </label>
-      <button id="botaoLogin" class="button" onclick="logar()">
-        <span>Login</span>
-      </button>
-      <center>
-        <fieldset>
-          <legend>ou</legend>
-        </fieldset>
-      </center>
-      <button
-        type="button"
-        class="btn"
-        data-toggle="modal"
-        data-target="#exampleModal"
-      >
-        <a class="criarConta">crie sua conta</a>
-      </button>
-    </div>
+    <form method="POST" action="/rotasEquipes/auth">
+      <div class="form">
+        <center>
+          <a href="/">
+            <img src="./assets/images/logo.png" width="150px" alt="" />
+          </a>
+        </center>
+        <input type="text" name="email" id="email" required />
+        <label for="pass" class="labelPass">
+          <span class="contentPass">Email</span>
+        </label>
+        <input type="password" name="senha" id="senha" required />
+        <label for="pass" class="labelPass">
+          <span class="contentPass">Senha</span>
+        </label>
+        <button id="botaoLogin" class="button">
+          <span>Login</span>
+        </button>
+        <center>
+          <fieldset>
+            <legend>ou</legend>
+          </fieldset>
+        </center>
+        <button
+          type="button"
+          class="btn"
+          data-toggle="modal"
+          data-target="#exampleModal"
+        >
+          <a class="criarConta">crie sua conta</a>
+        </button>
+      </div>
+    </form>
 
     <div
       class="modal fade"
@@ -102,12 +104,7 @@
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Nome do responsável</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="nome"
-                  name="nome"
-                />
+                <input type="text" class="form-control" id="nome" name="nome" />
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1"
@@ -141,7 +138,13 @@
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" onclick="criarUsuario()">Cadastrar-se</button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="criarUsuario()"
+            >
+              Cadastrar-se
+            </button>
           </div>
         </div>
       </div>
@@ -153,9 +156,9 @@
         fetch("/rotasEquipes", {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: data,
+          body: data
         });
-        setTimeout(function () {
+        setTimeout(function() {
           window.location.reload();
         }, 100);
       }
@@ -176,5 +179,5 @@
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"
   ></script>
-  <script src="js/login.js"></script>
+  <!-- <script src="js/login.js"></script> -->
 </html>
