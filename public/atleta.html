@@ -121,6 +121,7 @@
                   name="cpf"
                   type="number"
                   class="validate"
+                  max="11"
                 />
                 <label for="cpf">CPF</label>
               </div>
@@ -172,6 +173,7 @@
                   name="cpf"
                   type="text"
                   class="validate"
+                  maxlength="11"
                 />
                 <label for="cpf">CPF</label>
               </div>
@@ -195,7 +197,7 @@
           href="#!"
           style="color: white"
           class="modal-close waves-effect waves-green btn-flat"
-          >CRIAR USUARIO</a
+          >ADICIONAR ATLETA</a
         >
       </div>
     </div>
@@ -203,7 +205,7 @@
     <!-- Modal Structure -->
     <div id="modal-delecao" class="modal modalDeletar">
       <div class="modal-content">
-        <h5>Confirmar Deleção do Usuário</h5>
+        <h5>Confirmar Deleção do Atleta</h5>
       </div>
       <form id="form-delecao">
         <input type="hidden" name="id_atleta" id="dl-id_atleta" />
@@ -226,7 +228,7 @@
     <script>
       let modalCriacao = null;
       let modalEdicao = null;
-      document.addEventListener("DOMContentLoaded", function() {
+      document.addEventListener("DOMContentLoaded", function () {
         var elems = document.querySelectorAll(".modal");
         var instances = M.Modal.init(elems, {});
         modalEdicao = instances[0];
@@ -255,8 +257,8 @@
       }
       function atualiza() {
         fetch("/rotasTeste")
-          .then(res => res.json())
-          .then(dados => {
+          .then((res) => res.json())
+          .then((dados) => {
             listaDeAtletas = dados;
             tabela.innerHTML = listaDeAtletas
               .map(
@@ -282,10 +284,10 @@
         fetch("/rotasTeste", {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: data
+          body: data,
         });
         Swal.fire("Sucesso!", "Seu atleta foi adicionado!", "success");
-        setTimeout(function() {
+        setTimeout(function () {
           window.location.reload();
         }, 1500);
       }
@@ -296,23 +298,23 @@
         fetch("/rotasTeste", {
           method: "PUT",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: data
+          body: data,
         });
         Swal.fire("Sucesso!", "Seu atleta foi editado!", "success");
-        setTimeout(function() {
+        setTimeout(function () {
           window.location.reload();
-        }, 1500);
+        }, 1200);
       }
 
       function deletarAtleta() {
         const id = document.getElementById("dl-id_atleta").value;
         fetch("/rotasTeste/" + id, {
-          method: "DELETE"
+          method: "DELETE",
         });
         Swal.fire("Sucesso!", "Seu atleta foi excluído!", "success");
-        setTimeout(function() {
+        setTimeout(function () {
           window.location.reload();
-        }, 2000);
+        }, 1600);
       }
     </script>
   </body>

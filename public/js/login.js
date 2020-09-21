@@ -19,3 +19,9 @@
 //         logar();
 //     }
 // })
+
+function(err){
+    if(err.responseText == "Erro") {
+        alert("erro")
+    }
+}
