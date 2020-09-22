@@ -96,8 +96,12 @@ section .section-title {
 }
 
 #footer {
-  background: darkblue !important;
-  padding: 40px 0 0;
+  background-image: linear-gradient(
+    to top right,
+    rgb(0, 0, 139),
+    rgb(44, 44, 226)
+  ) !important;
+  padding: 40px 0;
   display: flex;
   justify-content: space-around;
 }

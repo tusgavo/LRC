@@ -85,7 +85,7 @@ section .section-title {
 
 #footer {
   background: darkblue !important;
-  padding: 40px 0 0;
+  padding: 40px 0;
   display: flex;
   justify-content: space-around;
 }
