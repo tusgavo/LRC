@@ -9,7 +9,7 @@ const routers = express.Router();
 
 routers.post("/auth", (req, res) => {
   const usuario = new Usuario(req.body);
-  new UsuarioDAO().buscaPorUsuarioESenha(usuario, (resposta) => {
+  new UsuarioDAO().autenticacaoUsuarioESenha(usuario, (resposta) => {
     if (resposta.length > 0) {
       const token = jwt.sign(
         {
@@ -21,7 +21,7 @@ routers.post("/auth", (req, res) => {
       );
       res.cookie("token", token).redirect("/equipe");
     } else {
-      res.send("Oi")
+      res.redirect(301, "/login")
     }
   });
 });
