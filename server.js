@@ -4,6 +4,7 @@ const con = require("./src/helpers/banco");
 const express = require("express");
 const app = express();
 const rotasTeste = require("./src/routes/rotasTeste");
+const rotasUsuarios = require("./src/routes/rotasUsuarios");
 const rotasEquipes = require("./src/routes/rotasEquipes");
 const path = require("path");
  
@@ -64,7 +65,9 @@ app.get("/teste", (req, res) => {
 
 app.use('/rotasTeste', rotasTeste);
 
-app.use('/rotasEquipes', rotasEquipes);
+app.use('/rotasUsuarios', rotasUsuarios);
+
+app.use("/rotasEquipes", rotasEquipes);
 
 app.listen(3000, () => {
   console.log("Servidor rodando");

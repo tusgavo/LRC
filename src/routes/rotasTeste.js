@@ -12,7 +12,6 @@ routers.get("/", (req, res) => {
 
 routers.post("/", (req, res) => {
   const teste = new Teste(req.body);
-  // teste.senha = teste.senha;
   BancoUtils.insert(teste, Teste.tabela, (r) => {
     res.json(r);
   });

@@ -54,7 +54,7 @@ header {
 
 .dadosEquipe {
   background: -webkit-linear-gradient(left, rgb(0, 0, 139), rgb(135, 206, 235));
-  width: 90%;
+  width: 95%;
   margin: 50px 0;
   padding: 50px 0;
 }
@@ -67,11 +67,11 @@ header {
 }
 
 .inputDados {
-  width: 21%;
-  border-radius: 8px;
-  border: none;
-  height: 35px;
-  margin: 0 20px;
+  width: 21% !important;
+  border-radius: 8px !important;
+  border: none !important;
+  height: 35px !important;
+  margin: 0 20px !important;
 }
 
 hr {
@@ -81,12 +81,61 @@ hr {
   height: 1px;
 }
 
+.teste {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal {
+  height: 700px !important;
+}
+
+.modal-content {
+  display: block !important;
+  padding: 15px !important;
+}
+
+.modal-close {
+  background-color: darkblue !important;
+}
+
+.inputAdd {
+  margin-bottom: 50px !important;
+  width: 100% !important;
+}
+
+.nomeTime {
+  color: white;
+  font-size: 40px;
+}
+
 .tituloDadosPrin {
   color: white;
+  font-weight: 500;
+  font-size: 43px !important;
+}
+
+.tituloDadosTecn {
+  margin: 0 0 20px !important;
+  color: white !important;
+  font-size: 43px;
+  font-weight: 500;
 }
 
 .iconEdit {
   cursor: pointer;
+}
+
+.botaoAddEquipe {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.btn-primary {
+  color: #fff !important;
+  background-color: darkblue !important;
+  border-color: darkblue !important;
+  margin: 30px 0;
 }
 
 ::-webkit-input-placeholder {

@@ -17,7 +17,7 @@
   </head>
 
   <body>
-    <form method="POST" action="/rotasEquipes/auth">
+    <form method="POST" action="/rotasUsuarios/auth">
       <div class="form">
         <center>
           <a href="/">
@@ -75,12 +75,12 @@
           <div class="modal-body">
             <form id="form-criacao" method="POST">
               <div class="form-group">
-                <label for="exampleInputEmail1">Nome da equipe</label>
+                <label for="exampleInputEmail1">Nome</label>
                 <input
                   type="text"
                   class="form-control"
                   id="cr-nomeEquipe"
-                  name="nomeEquipe"
+                  name="nome"
                   aria-describedby="emailHelp"
                 />
               </div>
@@ -102,39 +102,6 @@
                   name="senha"
                 />
               </div>
-              <div class="form-group">
-                <label for="exampleInputPassword1">Nome do responsável</label>
-                <input type="text" class="form-control" id="nome" name="nome" />
-              </div>
-              <div class="form-group">
-                <label for="exampleInputPassword1"
-                  >Telefone do responsável</label
-                >
-                <input
-                  type="number"
-                  class="form-control"
-                  id="cr-telResp"
-                  name="telResp"
-                />
-              </div>
-              <div class="form-group">
-                <label for="exampleInputPassword1">Técnico</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="cr-tecnico"
-                  name="tecnico"
-                />
-              </div>
-              <div class="form-group">
-                <label for="exampleInputPassword1">Auxiliar técnico</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="cr-auxTecnico"
-                  name="auxTecnico"
-                />
-              </div>
             </form>
           </div>
           <div class="modal-footer">
@@ -153,7 +120,7 @@
       function criarUsuario() {
         const formulario = document.getElementById("form-criacao");
         const data = new URLSearchParams(new FormData(formulario));
-        fetch("/rotasEquipes", {
+        fetch("/rotasUsuarios", {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: data

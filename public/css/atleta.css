@@ -137,6 +137,7 @@ header {
 
 .modal-content {
   margin-top: 20px !important;
+  display: block !important;
 }
 
 .modal-close {
@@ -179,7 +180,6 @@ header {
 .inputEdit, .inputAdd {
   margin-bottom: 50px !important;
 }
-
 
 .editDelete {
   font-size: 22px;

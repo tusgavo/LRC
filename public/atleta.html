@@ -99,46 +99,48 @@
 
     <!-- Modal Structure -->
     <div id="modal-edicao" class="modal modalEdit">
-      <div class="modal-content">
-        <div class="row">
-          <form id="form-edicao" class="col s12">
-            <input type="hidden" id="ed-id_atleta" name="id_atleta" />
-            <div class="row container teste">
-              <div class="input-field col s12 inputEdit">
-                <input
-                  placeholder="Nome do atleta"
-                  id="ed-nomeAtleta"
-                  name="nomeAtleta"
-                  type="text"
-                  class="validate"
-                />
-                <label for="nomeAtleta">Nome do atleta</label>
+      <center>
+        <div class="modal-content">
+          <div class="row">
+            <form id="form-edicao" class="col s12">
+              <input type="hidden" id="ed-id_atleta" name="id_atleta" />
+              <div class="row container teste">
+                <div class="input-field col s12 inputEdit">
+                  <input
+                    placeholder="Nome do atleta"
+                    id="ed-nomeAtleta"
+                    name="nomeAtleta"
+                    type="text"
+                    class="validate"
+                  />
+                  <label for="nomeAtleta">Nome do atleta</label>
+                </div>
+                <div class="input-field col s12 inputEdit">
+                  <input
+                    placeholder="CPF"
+                    id="ed-cpf"
+                    name="cpf"
+                    type="number"
+                    class="validate"
+                    max="11"
+                  />
+                  <label for="cpf">CPF</label>
+                </div>
+                <div class="input-field col s12 inputEdit">
+                  <input
+                    placeholder="Posição"
+                    id="ed-posicao"
+                    name="posicao"
+                    type="text"
+                    class="validate"
+                  />
+                  <label for="posicao">Posição</label>
+                </div>
               </div>
-              <div class="input-field col s12 inputEdit">
-                <input
-                  placeholder="CPF"
-                  id="ed-cpf"
-                  name="cpf"
-                  type="number"
-                  class="validate"
-                  max="11"
-                />
-                <label for="cpf">CPF</label>
-              </div>
-              <div class="input-field col s12 inputEdit">
-                <input
-                  placeholder="Posição"
-                  id="ed-posicao"
-                  name="posicao"
-                  type="text"
-                  class="validate"
-                />
-                <label for="posicao">Posição</label>
-              </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
-      </div>
+      </center>
       <div class="modal-footer">
         <a
           onclick="editarAtleta()"
