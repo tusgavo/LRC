@@ -13,7 +13,6 @@ routers.post("/auth", (req, res) => {
     if (resposta.length > 0) {
       const equipe = resposta[0].id_usuario;      
       res.cookie("id_usuario", equipe);
-
       const token = jwt.sign(
         {
           email: resposta[0].email,

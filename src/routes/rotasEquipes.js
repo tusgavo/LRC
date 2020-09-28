@@ -4,7 +4,6 @@ const BancoUtils = require("../helpers/bancoUtils");
 const routers = express.Router();
 
 routers.get("/", (req, res) => {
-  console.log("teste");
   var tokenCookie = req.cookies["token"];
   if (tokenCookie == null) {
     res.redirect(301, "/login");
