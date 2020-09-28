@@ -54,15 +54,15 @@ header {
 
 .dadosEquipe {
   background: -webkit-linear-gradient(left, rgb(0, 0, 139), rgb(135, 206, 235));
-  width: 95%;
-  margin: 15px 0 50px;
-  padding: 50px 0;
+  /* width: 95%; */
+  margin: 0 0 50px;
+  padding: 1px 0 50px;
 }
 
 .dadosPrin {
-  justify-content: space-around;
+  /* justify-content: space-around;
   display: flex;
-  align-items: center;
+  align-items: center; */
   padding: 30px 50px;
 }
 
@@ -71,6 +71,8 @@ header {
   border-radius: 8px !important;
   height: 35px !important;
   margin: 0 20px !important;
+  font-weight: 700;
+  /* border-bottom: 0 !important; */
 }
 
 hr {
@@ -78,6 +80,11 @@ hr {
   border-color: black;
   background-color: black;
   height: 1px;
+}
+
+label {
+  color: white !important;
+  font-weight: 500;
 }
 
 .teste {
@@ -106,6 +113,7 @@ hr {
 .nomeTime {
   color: white;
   font-size: 40px;
+  font-weight: 400;
 }
 
 .tituloDadosPrin {
@@ -137,15 +145,8 @@ hr {
   margin: 30px 0;
 }
 
-::-webkit-input-placeholder {
-  color: white;
-  font-weight: 500;
-  font-size: 18px;
-  text-align: center;
-}
-
 .editarEquipe {
-  margin: 0 0 50px
+  margin: 0 0 50px;
 }
 
 .dropdown {
@@ -174,6 +175,10 @@ hr {
 
   .modal {
     width: 95% !important;
+  }
+  .fa-edit {
+    margin-top: 15px;
+    font-size: 25px !important;
   }
 }
 
@@ -209,6 +214,6 @@ hr {
 @media (max-width: 425px) {
   .alinhar {
     display: flex;
-    justify-content: center
+    justify-content: center;
   }
 }

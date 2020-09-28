@@ -7,11 +7,13 @@ const rotasTeste = require("./src/routes/rotasTeste");
 const rotasUsuarios = require("./src/routes/rotasUsuarios");
 const rotasEquipes = require("./src/routes/rotasEquipes");
 const path = require("path");
+const cookieParser = require("cookie-parser");
  
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
+app.use(cookieParser());
 
 app.get("/rotasAtletas", (req, res) => {
   con.query("SELECT * FROM atletas", (err, rows) => {

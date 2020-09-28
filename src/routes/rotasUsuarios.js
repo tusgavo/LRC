@@ -11,17 +11,20 @@ routers.post("/auth", (req, res) => {
   const usuario = new Usuario(req.body);
   new UsuarioDAO().autenticacaoUsuarioESenha(usuario, (resposta) => {
     if (resposta.length > 0) {
+      const equipe = resposta[0].id_usuario;      
+      res.cookie("id_usuario", equipe);
+
       const token = jwt.sign(
         {
           email: resposta[0].email,
-          senha: resposta[0].senha
+          senha: resposta[0].senha,
         },
         segredo,
         { expiresIn: "24h" }
       );
       res.cookie("token", token).redirect("/equipe");
     } else {
-      res.redirect(301, "/login")
+      res.redirect(301, "/login");
     }
   });
 });

@@ -4,9 +4,15 @@ const BancoUtils = require("../helpers/bancoUtils");
 const routers = express.Router();
 
 routers.get("/", (req, res) => {
-  BancoUtils.select(Equipe.tabela, (equipes1) => {
-    res.json(equipes1);
-  });
+  console.log("teste");
+  var tokenCookie = req.cookies["token"];
+  if (tokenCookie == null) {
+    res.redirect(301, "/login");
+  } else {
+    BancoUtils.select(Equipe.tabela, (equipes1) => {
+      res.json(equipes1);
+    });
+  }
 });
 
 routers.post("/", (req, res) => {
