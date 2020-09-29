@@ -78,6 +78,7 @@ function editarEquipe() {
     window.location.reload();
   }, 1200);
 }
+
 function atualiza() {
   fetch("/rotasEquipes")
     .then(res => res.json())
@@ -172,8 +173,3 @@ function atualiza() {
     });
 }
 atualiza();
-
-if (Cookies.get("token")) {
-} else {
-  window.location.href = "login";
-}

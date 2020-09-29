@@ -1,13 +1,12 @@
-class Atletas {
-    static get tabela() {
-      return "atletas";
-    }
-    constructor(objAtleta) {
-      this.nomeAtleta = "";
-      this.cpf = "";
-      this.posicao = "";
-      Object.assign(this, objAtleta);
-    }
+class Atleta {
+  static get tabela() {
+    return "atletas";
   }
-  module.exports = Atletas;
-  
+  constructor(objAtleta) {
+    this.nomeAtleta = "";
+    this.cpf = "";
+    this.posicao = "";
+    Object.assign(this, objAtleta);
+  }
+}
+module.exports = Atleta;

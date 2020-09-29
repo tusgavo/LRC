@@ -1,20 +1,41 @@
 const express = require("express");
-const Atletas = require("../models/atletas");
+const Atleta = require("../models/atletas");
 const BancoUtils = require("../helpers/bancoUtils");
 const routers = express.Router();
 
 routers.get("/", (req, res) => {
-  BancoUtils.select(Atletas.tabela, (atletas1) => {
-    res.json(atletas1);
+  BancoUtils.select(Atleta.tabela, (atletas) => {
+    res.json(atletas);
   });
 });
 
 routers.post("/", (req, res) => {
-  const novoAtleta = new Atletas(req.body);
-  novoAtleta.senha = novoAtleta.senha;
-  BancoUtils.insert(atletas, Atletas.tabela, (r) => {
+  const atleta = new Atleta(req.body);
+  BancoUtils.insert(atleta, Atleta.tabela, (r) => {
     res.json(r);
   });
+});
+
+routers.put("/", (req, res) => {
+  const novoAtleta = new Atleta(req.body);
+  BancoUtils.put(
+    novoAtleta,
+    Atleta.tabela,
+    { key: "id_atleta", value: novoAtleta.id_atleta },
+    (r) => {
+      res.json(r);
+    }
+  );
+});
+
+routers.delete("/:id_atleta", (req, res) => {
+  BancoUtils.delete(
+    Atleta.tabela,
+    { key: "id_atleta", value: req.params.id_atleta },
+    (r) => {
+      res.json(r);
+    }
+  );
 });
 
 module.exports = routers;

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/novaEquipe.css" />
+    <title>Nova Equipe</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/images/logo.ico"
+      type="image/x-icon"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  </head>
+  <body>
+    <header class="cabecalhoPrincipal">
+      <div class="container">
+        <h1 class="cabecalhoPrincipal-titulo">
+          <a href="/"
+            ><img src="./assets/images/logo.png" width="100px" alt=""
+          /></a>
+        </h1>
+
+        <div class="cabecalhoPrincipal-nav">
+          <a class="cabecalhoPrincipal-nav-link drop" href="/">Home</a>
+          <a class="cabecalhoPrincipal-nav-link drop" href="/equipe">Equipe</a>
+          <a class="cabecalhoPrincipal-nav-link drop" href="/atletas"
+            >Atletas</a
+          >
+        </div>
+        <i
+          class="fas fa-sign-out-alt fa-2x"
+          id="iconExit"
+          onclick="logout()"
+          style="color: #fff; cursor: pointer"
+        ></i>
+      </div>
+      <center>
+        <div class="dropdown">
+          <button
+            class="btn btn-secondary dropdown-toggle dropdownColor"
+            type="button"
+            id="dropdownMenuButton"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Equipe
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="/">Home</a>
+            <a class="dropdown-item" href="/equipe">Equipe</a>
+            <a class="dropdown-item" href="/atletas">Atletas</a>
+            <a class="dropdown-item" href="/login">Sair</a>
+          </div>
+        </div>
+      </center>
+    </header>
+
+    <div class="container">
+      <center>
+        <h1 class="crieEquipe">Crie sua equipe</h1>
+        <form
+          class="formNewEquipe"
+          id="form-criacao"
+          action="/rotasEquipes"
+          method="POST"
+        >
+          <!-- Nome equipe -->
+          <div class="form-group">
+            <label for="exampleInputEmail1" style="float: left"
+              >Nome da Equipe</label
+            >
+            <input
+              class="form-control validate"
+              placeholder="Nome da equipe"
+              id="cr-nomeEquipe"
+              name="nomeEquipe"
+              type="text"
+            />
+          </div>
+
+          <!-- Nome responsavel -->
+          <div class="form-group">
+            <label for="exampleInputPassword1" style="float: left"
+              >Nome do responsável</label
+            >
+            <input
+              class="form-control validate"
+              placeholder="Nome do responsável"
+              id="cr-nome"
+              name="nome"
+              type="text"
+            />
+          </div>
+
+          <!-- Telefone responsavel -->
+          <div class="form-group">
+            <label for="exampleInputPassword1" style="float: left"
+              >Telefone do responsável</label
+            >
+            <input
+              class="form-control validate"
+              placeholder="Telefone do responsável"
+              id="cr-telResp"
+              name="telResp"
+              type="number"
+              maxlength="11"
+            />
+          </div>
+
+          <!-- Tecnico -->
+          <div class="form-group">
+            <label for="exampleInputPassword1" style="float: left"
+              >Técnico</label
+            >
+            <input
+              class="form-control validate"
+              placeholder="Técnico"
+              id="cr-tecnico"
+              name="tecnico"
+              type="text"
+            />
+          </div>
+
+          <!-- Auxiliar tecnico -->
+          <div class="form-group">
+            <label for="exampleInputPassword1" style="float: left"
+              >Auxíliar Técnico</label
+            >
+            <input
+              class="form-control validate"
+              placeholder="Auxíliar Técnico"
+              id="cr-auxTecnico"
+              name="auxTecnico"
+              type="text"
+            />
+          </div>
+          <button
+            type="submit"
+            class="btn btn-primary"
+            onclick="criarEquipe()"
+            style="float: right"
+          >
+            Criar equipe
+          </button>
+        </form>
+      </center>
+    </div>
+    <script>
+      function criarEquipe() {
+        const formulario = document.getElementById("form-criacao");
+        const data = new URLSearchParams(new FormData(formulario));
+        fetch("/rotasEquipes", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: data,
+        });
+        Swal.fire("Sucesso!", "Sua equipe foi criada!", "success");
+        setTimeout(function () {
+          window.location.reload();
+        }, 1500);
+      }
+    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+header {
+  background-image: linear-gradient(
+    to top right,
+    rgb(135, 206, 235),
+    rgb(0, 0, 139)
+  );
+  background-repeat: no-repeat;
+}
+
+.cabecalhoPrincipal {
+  padding: 20px 0 0;
+  box-shadow: 0px 8px 5px 0px rgba(171, 159, 171, 1);
+}
+
+.cabecalhoPrincipal-titulo {
+  font-weight: bold;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.cabecalhoPrincipal-titulo a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.cabecalhoPrincipal-nav-link {
+  padding: 10px;
+  margin-bottom: 10px;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.5s;
+  display: block;
+  border-bottom: 1px solid #9799a6;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.cabecalhoPrincipal-nav-link:hover {
+  text-decoration: none;
+  color: skyblue;
+}
+
+.cabecalhoPrincipal .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0;
+}
+
+.cabecalhoPrincipal-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dropdown {
+  display: none;
+}
+
+.crieEquipe {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.formNewEquipe {
+  margin-top: 30px;
+  width: 70%;
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  color: #fff !important;
+  background-color: darkblue !important;
+  border-color: darkblue !important;
+  margin: 0 0 30px;
+}
+
+.btn-primary:hover {
+    background-color: rgb(26, 26, 180) !important;
+    border-color: rgb(26, 26, 180) !important;
+}
+
+@media (max-width: 320px) {
+  .tituloDadosPrin {
+    font-size: 35px;
+  }
+
+  .dropdown {
+    display: block;
+    margin-top: -20px !important;
+  }
+
+  .dropdown-item {
+    font-size: 20px !important;
+    margin: 10px 0;
+  }
+  .dropdownColor {
+    background-color: darkblue !important;
+    border-color: darkblue !important;
+  }
+
+  .cabecalhoPrincipal {
+    padding-bottom: 30px;
+  }
+
+  #iconExit,
+  .cabecalhoPrincipal-nav {
+    display: none;
+  }
+}

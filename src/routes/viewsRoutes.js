@@ -1,51 +1,49 @@
 const express = require("express");
-const app = express();
-const path = require("path");
 const router = express.Router();
+const path = require("path");
 
-app.use(express.static(path.join(__dirname, "public")));
-
-app.get("/", (req, res) => {
-  res.sendFile(__dirname + "./public/views/index.html");
+router.get("/", function (req, res) {
+  res.sendFile(path.resolve(__dirname + "/../../public/index.html"));
 });
 
+router.get("/login", function (req, res) {
+  res.sendFile(path.resolve(__dirname + "/../../public/login.html"));
+});
 
+router.get("/equipe", function (req, res) {
+  if (req.cookies.token) {
+    res.sendFile(path.resolve(__dirname + "/../../public/equipe.html"));
+  } else {
+    res.redirect("/login");
+  }
+});
 
+router.get("/atletas", function (req, res) {
+  if (req.cookies.token) {
+    res.sendFile(path.resolve(__dirname + "/../../public/atleta.html"));
+  } else {
+    res.redirect("/login");
+  }
+});
 
-// router.get("/", (req, res) => {
-//   res.render("index");
-// });
+router.get("/newTeam", function (req, res) {
+  if (req.cookies.token) {
+    res.sendFile(path.resolve(__dirname + "/../../public/novaEquipe.html"));
+  } else {
+    res.redirect("/login");
+  }
+});
 
-// router.get("/login", (req, res) => {
-//   res.render("login");
-// });
+router.get("/noticia1", function (req, res) {
+  res.sendFile(path.resolve(__dirname + "/../../public/noticia1.html"));
+});
 
-// router.get("/register", (req, res) => {
-//   res.render("cadastro");
-// });
+router.get("/noticia2", function (req, res) {
+  res.sendFile(path.resolve(__dirname + "/../../public/noticia2.html"));
+});
 
-// router.get("/contRegister", (req, res) => {
-//   res.render("cadastro2");
-// });
-
-// router.get("/equipe", (req, res) => {
-//   res.render("equipe");
-// });
-
-// router.get("/atletas", (req, res) => {
-//   res.render("atleta");
-// });
-
-// router.get("/noticia1", (req, res) => {
-//   res.render("noticia1");
-// });
-
-// router.get("/noticia2", (req, res) => {
-//   res.render("noticia2");
-// });
-
-// router.get("/noticia3", (req, res) => {
-//   res.render("noticia3");
-// });
+router.get("/noticia3", function (req, res) {
+  res.sendFile(path.resolve(__dirname + "/../../public/noticia3.html"));
+});
 
 module.exports = router;

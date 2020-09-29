@@ -11,8 +11,8 @@ routers.post("/auth", (req, res) => {
   const usuario = new Usuario(req.body);
   new UsuarioDAO().autenticacaoUsuarioESenha(usuario, (resposta) => {
     if (resposta.length > 0) {
-      const equipe = resposta[0].id_usuario;      
-      res.cookie("id_usuario", equipe);
+      const usuarioId = resposta[0].id_usuario;      
+      res.cookie("id_usuario", usuarioId);
       const token = jwt.sign(
         {
           email: resposta[0].email,

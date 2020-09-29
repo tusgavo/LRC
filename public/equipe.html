@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Equipe</title>
     <link rel="stylesheet" href="./css/equipe.css" />
-    <link rel="shortcut icon" href="./assets/images/logo.ico" />
+    <link rel="shortcut icon" href="/assets/images/logo.ico" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -71,89 +71,6 @@
     </header>
 
     <main>
-      <!-- Modal criação -->
-      <div class="container">
-        <div class="alinhar">
-          <button class="btn btn-primary">
-            <a href="#modal-criacao" class="modal-trigger botaoAddEquipe">
-              CRIAR EQUIPE
-            </a>
-          </button>
-        </div>
-        <div id="modal-criacao" class="modal container modalAdd">
-          <center>
-            <div class="modal-content">
-              <div class="row">
-                <form id="form-criacao" class="col s12">
-                  <div class="row container teste">
-                    <div class="input-field col s12 inputAdd">
-                      <input
-                        placeholder="Nome da equipe"
-                        id="cr-nomeEquipe"
-                        name="nomeEquipe"
-                        type="text"
-                        class="validate"
-                      />
-                      <label for="nomeEquipe">Nome da equipe</label>
-                    </div>
-                    <div class="input-field col s12 inputAdd">
-                      <input
-                        placeholder="Nome do responsável"
-                        id="cr-nome"
-                        name="nome"
-                        type="text"
-                        class="validate"
-                      />
-                      <label for="nome">Nome do responsável</label>
-                    </div>
-                    <div class="input-field col s12 inputAdd">
-                      <input
-                        placeholder="Telefone do responsável"
-                        id="cr-telResp"
-                        name="telResp"
-                        type="text"
-                        class="validate"
-                        maxlength="11"
-                      />
-                      <label for="telResp">Telefone do responsável</label>
-                    </div>
-                    <div class="input-field col s12 inputAdd">
-                      <input
-                        placeholder="Técnico"
-                        id="cr-tecnico"
-                        name="tecnico"
-                        type="text"
-                        class="validate"
-                      />
-                      <label for="tecnico">Técnico</label>
-                    </div>
-                    <div class="input-field col s12 inputAdd">
-                      <input
-                        placeholder="Auxíliar Técnico"
-                        id="cr-auxTecnico"
-                        name="auxTecnico"
-                        type="text"
-                        class="validate"
-                      />
-                      <label for="auxTecnico">Auxíliar técnico</label>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </center>
-          <div class="modal-footer">
-            <a
-              onclick="criarEquipe()"
-              href="#!"
-              style="color: white"
-              class="modal-close waves-effect waves-green btn-flat"
-              >CRIAR EQUIPE</a
-            >
-          </div>
-        </div>
-      </div>
-
       <div class="dadosEquipe" id="informaçoesEquipe">
         <!-- Informações do banco -->
       </div>

@@ -1,6 +1,7 @@
 const express = require("express");
 const Equipe = require("../models/equipes");
 const BancoUtils = require("../helpers/bancoUtils");
+const Usuario = require("../models/usuarios");
 const routers = express.Router();
 
 routers.get("/", (req, res) => {
@@ -8,7 +9,8 @@ routers.get("/", (req, res) => {
   if (tokenCookie == null) {
     res.redirect(301, "/login");
   } else {
-    BancoUtils.select(Equipe.tabela, (equipes1) => {
+    var idUsuario = req.cookies["id_usuario"];
+    BancoUtils.select(Equipe.tabela, Usuario.chavePrimaria, idUsuario, (equipes1) => {
       res.json(equipes1);
     });
   }

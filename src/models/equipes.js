@@ -2,6 +2,7 @@ class Equipe {
     static get tabela() {
       return "equipes";
     }
+   
     constructor(objEquipe) {
       this.nomeEquipe = "";
       this.nome = "";

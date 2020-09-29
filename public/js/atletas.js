@@ -23,7 +23,7 @@ function mostraModalDelecao(i) {
   document.getElementById("dl-id_atleta").value = listaDeAtletas[i].id_atleta;
 }
 function atualiza() {
-  fetch("/rotasTeste")
+  fetch("/rotasAtletas")
     .then(res => res.json())
     .then(dados => {
       listaDeAtletas = dados;
@@ -48,7 +48,7 @@ atualiza();
 function criarAtleta() {
   const formulario = document.getElementById("form-criacao");
   const data = new URLSearchParams(new FormData(formulario));
-  fetch("/rotasTeste", {
+  fetch("/rotasAtletas", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: data
@@ -62,7 +62,7 @@ function criarAtleta() {
 function editarAtleta() {
   const formulario = document.getElementById("form-edicao");
   const data = new URLSearchParams(new FormData(formulario));
-  fetch("/rotasTeste", {
+  fetch("/rotasAtletas", {
     method: "PUT",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: data
@@ -75,7 +75,7 @@ function editarAtleta() {
 
 function deletarAtleta() {
   const id = document.getElementById("dl-id_atleta").value;
-  fetch("/rotasTeste/" + id, {
+  fetch("/rotasAtletas/" + id, {
     method: "DELETE"
   });
   Swal.fire("Sucesso!", "Seu atleta foi excluído!", "success");

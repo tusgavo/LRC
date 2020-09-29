@@ -55,7 +55,6 @@ header {
 .dadosEquipe {
   background: -webkit-linear-gradient(left, rgb(0, 0, 139), rgb(135, 206, 235));
   /* width: 95%; */
-  margin: 0 0 50px;
   padding: 1px 0 50px;
 }
 
