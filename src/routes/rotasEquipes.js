@@ -10,15 +10,20 @@ routers.get("/", (req, res) => {
     res.redirect(301, "/login");
   } else {
     var idUsuario = req.cookies["id_usuario"];
-    BancoUtils.select(Equipe.tabela, Usuario.chavePrimaria, idUsuario, (equipes1) => {
-      res.json(equipes1);
-    });
+    BancoUtils.selectEquipes(
+      Equipe.tabela,
+      Usuario.chavePrimaria,
+      idUsuario,
+      equipes1 => {
+        res.json(equipes1);
+      }
+    );
   }
 });
 
 routers.post("/", (req, res) => {
   const novaEquipe = new Equipe(req.body);
-  BancoUtils.insert(novaEquipe, Equipe.tabela, (r) => {
+  BancoUtils.insert(novaEquipe, Equipe.tabela, r => {
     res.json(r);
   });
 });

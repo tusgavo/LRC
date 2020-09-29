@@ -55,7 +55,7 @@ header {
 .dadosEquipe {
   background: -webkit-linear-gradient(left, rgb(0, 0, 139), rgb(135, 206, 235));
   /* width: 95%; */
-  padding: 1px 0 50px;
+  padding: 75px 0 ;
 }
 
 .dadosPrin {
@@ -119,6 +119,7 @@ label {
   color: white;
   font-weight: 500;
   font-size: 43px !important;
+  margin: 0;
 }
 
 .tituloDadosTecn {

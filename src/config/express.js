@@ -1,11 +1,9 @@
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
-const con = require("../helpers/banco");
 const express = require("express");
 const app = express();
 const path = require("path");
-// const rotasTeste = require("../routes/rotasTeste");
 const rotasAtletas = require("../routes/rotasAtletas");
 const rotasUsuarios = require("../routes/rotasUsuarios");
 const rotasEquipes = require("../routes/rotasEquipes");

@@ -11,7 +11,7 @@ class BancoUtils {
   static select(tb, cb) {
     con.query(`SELECT * FROM ${tb}`, (err, res) => {
       if (err) throw err;
-      // cb(res);
+      cb(res);  
     });
   }
 
