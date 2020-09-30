@@ -84,10 +84,6 @@ function atualiza() {
               value="${equipe.nome}"
               disabled
             />
-            <i
-              class="fas fa-edit fa-lg"
-              style="color: black; cursor: pointer"
-            ></i>
             <br>
             
             <label style="font-size: 20px; margin-top: 20px">Telefone do responsável:</label>
@@ -101,10 +97,6 @@ function atualiza() {
               value="${equipe.telResp}"
               disabled
             />
-            <i
-              class="fas fa-edit fa-lg"
-              style="color: black; cursor: pointer"
-            ></i>
           </div>
           <hr />
           <div class="dadosTecnicos">
@@ -122,10 +114,6 @@ function atualiza() {
                 value="${equipe.tecnico}"
                 disabled
               />
-              <i
-                class="fas fa-edit fa-lg"
-                style="color: black; cursor: pointer"
-              ></i>
 
               <br>
               <label style="font-size: 20px; margin-top: 20px">Auxíliar Técnico:</label>
@@ -139,11 +127,6 @@ function atualiza() {
                 value="${equipe.auxTecnico}"
                 disabled
               />
-              <i
-                class="fas fa-edit fa-lg"
-                style="color: black; cursor: pointer"
-              ></i>
-
             </div>
           </div>
         </center>

@@ -59,6 +59,8 @@ header {
 .crieEquipe {
   margin-top: 20px;
   text-align: center;
+  text-shadow: gray 0.1em 0.1em 0.2em;
+  color: darkblue
 }
 
 .formNewEquipe {
@@ -75,8 +77,8 @@ header {
 }
 
 .btn-primary:hover {
-    background-color: rgb(26, 26, 180) !important;
-    border-color: rgb(26, 26, 180) !important;
+  background-color: rgb(26, 26, 180) !important;
+  border-color: rgb(26, 26, 180) !important;
 }
 
 @media (max-width: 320px) {

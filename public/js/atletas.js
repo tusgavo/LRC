@@ -83,8 +83,3 @@ function deletarAtleta() {
     window.location.reload();
   }, 1600);
 }
-
-if (Cookies.get("token")) {
-} else {
-  window.location.href = "login";
-}
