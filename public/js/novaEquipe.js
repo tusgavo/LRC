@@ -8,7 +8,7 @@ function criarEquipe() {
   });
   Swal.fire("Sucesso!", "Sua equipe foi criada!", "success");
   setTimeout(function() {
-    window.location.reload();
+    window.location.href = "equipe";
   }, 1500);
 }
 

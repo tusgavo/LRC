@@ -9,6 +9,7 @@ class Equipe {
       this.telResp = "";
       this.tecnico = "";
       this.auxTecnico = "";
+      this.id_usuario = "";
       Object.assign(this, objEquipe);
     }
   }

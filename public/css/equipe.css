@@ -59,9 +59,6 @@ header {
 }
 
 .dadosPrin {
-  /* justify-content: space-around;
-  display: flex;
-  align-items: center; */
   padding: 30px 50px;
 }
 
@@ -71,7 +68,6 @@ header {
   height: 35px !important;
   margin: 0 20px !important;
   font-weight: 700;
-  /* border-bottom: 0 !important; */
 }
 
 hr {

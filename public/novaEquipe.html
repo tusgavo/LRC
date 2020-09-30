@@ -9,6 +9,10 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/novaEquipe.css" />
     <title>Nova Equipe</title>
     <link
@@ -71,89 +75,51 @@
       <div class="container">
         <center>
           <h1 class="crieEquipe">Seja bem vindo! Crie sua equipe</h1>
+        </center>
+        <div class="alinhar">
           <form
-            class="formNewEquipe"
+            class="form"
             id="form-criacao"
             action="/rotasEquipes"
             method="POST"
           >
             <!-- Nome equipe -->
-            <div class="form-group">
-              <label for="exampleInputEmail1" style="float: left"
-                >Nome da Equipe</label
-              >
-              <input
-                class="form-control validate"
-                placeholder="Nome da equipe"
-                id="cr-nomeEquipe"
-                name="nomeEquipe"
-                type="text"
-              />
-            </div>
+            <input type="text" name="nomeEquipe" id="email" required />
+            <label for="pass" class="labelPass">
+              <span class="contentPass">Nome da equipe</span>
+            </label>
 
             <!-- Nome responsavel -->
-            <div class="form-group">
-              <label for="exampleInputPassword1" style="float: left"
-                >Nome do responsável</label
-              >
-              <input
-                class="form-control validate"
-                placeholder="Nome do responsável"
-                id="cr-nome"
-                name="nome"
-                type="text"
-              />
-            </div>
+            <input type="text" name="nome" id="cr-nome" required />
+            <label for="pass" class="labelPass">
+              <span class="contentPass">Nome do responsável</span>
+            </label>
 
             <!-- Telefone responsavel -->
-            <div class="form-group">
-              <label for="exampleInputPassword1" style="float: left"
-                >Telefone do responsável</label
-              >
-              <input
-                class="form-control validate"
-                placeholder="Telefone do responsável"
-                id="cr-telResp"
-                name="telResp"
-                type="number"
-                maxlength="11"
-              />
-            </div>
+            <input type="text" name="telResp" id="cr-telResp" required />
+            <label for="pass" class="labelPass">
+              <span class="contentPass">Telefone do responsável</span>
+            </label>
 
             <!-- Tecnico -->
-            <div class="form-group">
-              <label for="exampleInputPassword1" style="float: left"
-                >Técnico</label
-              >
-              <input
-                class="form-control validate"
-                placeholder="Técnico"
-                id="cr-tecnico"
-                name="tecnico"
-                type="text"
-              />
-            </div>
+            <input type="text" name="tecnico" id="cr-tecnico" required />
+            <label for="pass" class="labelPass">
+              <span class="contentPass">Técnico</span>
+            </label>
 
             <!-- Auxiliar tecnico -->
-            <div class="form-group">
-              <label for="exampleInputPassword1" style="float: left"
-                >Auxíliar Técnico</label
-              >
-              <input
-                class="form-control validate"
-                placeholder="Auxíliar Técnico"
-                id="cr-auxTecnico"
-                name="auxTecnico"
-                type="text"
-              />
-            </div>
+            <input type="text" name="auxTecnico" id="cr-auxTecnico" required />
+            <label for="pass" class="labelPass" style="float: left">
+              <span class="contentPass">Auxíliar técnico</span>
+            </label>
+
+            <!-- ID Usuario -->
             <div class="form-group">
               <input
                 class="form-control validate"
                 id="cr-id_usuario"
                 name="id_usuario"
-                type="text"
-                value=""
+                type="hidden"
                 disabled
               />
             </div>
@@ -166,7 +132,7 @@
               Criar equipe
             </button>
           </form>
-        </center>
+        </div>
       </div>
     </main>
     <script src="./js/script.js"></script>
