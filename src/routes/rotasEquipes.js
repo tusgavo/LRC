@@ -17,12 +17,8 @@ routers.get("/", (req, res) => {
       idUsuario,
       (r) => {
         let equipeUsuario = JSON.parse(JSON.stringify(r));
-        console.log("equipeUsuario");
-        console.log(equipeUsuario.length);
-        console.log(equipeUsuario.length === 0);
         if (equipeUsuario.length === 0) {
-          console.log("redirecionando")
-          res.redirect("/newTeam");
+          res.json({ sucesso: false });
         } else {
           res.json(r);
         }

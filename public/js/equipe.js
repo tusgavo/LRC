@@ -34,7 +34,7 @@
 
 let modalCriacao = null;
 let modalEdicao = null;
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   var elems = document.querySelectorAll(".modal");
   var instances = M.Modal.init(elems, {});
   modalEdicao = instances[0];
@@ -46,130 +46,111 @@ let infoEquipes = document.getElementById("informaçoesEquipe");
 
 function mostraModal(i) {
   modalEdicao.open();
-  document.getElementById("ed-id_equipe").value = informacoesEquipes[i].id_equipe;
-  document.getElementById("ed-nomeEquipe").value = informacoesEquipes[i].nomeEquipe;
+  document.getElementById("ed-id_equipe").value =
+    informacoesEquipes[i].id_equipe;
+  document.getElementById("ed-nomeEquipe").value =
+    informacoesEquipes[i].nomeEquipe;
   document.getElementById("ed-telResp").value = informacoesEquipes[i].telResp;
   document.getElementById("ed-tecnico").value = informacoesEquipes[i].tecnico;
-  document.getElementById("ed-auxTecnico").value = informacoesEquipes[i].auxTecnico;
-}
-function criarEquipe() {
-  const formulario = document.getElementById("form-criacao");
-  const data = new URLSearchParams(new FormData(formulario));
-  fetch("/rotasEquipes", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: data
-  });
-  Swal.fire("Sucesso!", "Sua equipe foi criada!", "success");
-  setTimeout(function() {
-    window.location.reload();
-  }, 1500);
-}
-function editarEquipe() {
-  const formulario = document.getElementById("form-edicao");
-  const data = new URLSearchParams(new FormData(formulario));
-  fetch("/rotasEquipes", {
-    method: "PUT",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: data
-  });
-  Swal.fire("Sucesso!", "Seu atleta foi editado!", "success");
-  setTimeout(function() {
-    window.location.reload();
-  }, 1200);
+  document.getElementById("ed-auxTecnico").value =
+    informacoesEquipes[i].auxTecnico;
 }
 
 function atualiza() {
   fetch("/rotasEquipes")
-    .then(res => res.json())
-    .then(dados => {
-      informacoesEquipes = dados;
-      infoEquipes.innerHTML = informacoesEquipes
-        .map(
-          (equipe, i) => `
-          <center>
-          <h1 class="tituloDadosPrin">Dados principais</h1>
-            <h2 class="nomeTime">
-              ${equipe.nomeEquipe}
-            </h2>
-            <div class="dadosPrin">
-              <label style="font-size: 20px; margin-top: 20px">Nome do responsável:</label>
+    .then((res) => res.json())
+    .then((dados) => {
+      console.log(dados);
+      if (dados.sucesso === false) {
+        window.location.href = "newTeam";
+      } else {
+        infoEquipes.innerHTML = dados
+          .map(
+            (equipe, i) => `
+        <center>
+        <h1 class="tituloDadosPrin">Dados principais</h1>
+          <h2 class="nomeTime">
+            ${equipe.nomeEquipe}
+          </h2>
+          <div class="dadosPrin">
+            <label style="font-size: 20px; margin-top: 20px">Nome do responsável:</label>
+            <input
+              type="text"
+              id="nomeResp"
+              class="inputDados"
+              name=""
+              placeholder="Nome do responsável:"
+              id=""
+              value="${equipe.nome}"
+              disabled
+            />
+            <i
+              class="fas fa-edit fa-lg"
+              style="color: black; cursor: pointer"
+            ></i>
+            <br>
+            
+            <label style="font-size: 20px; margin-top: 20px">Telefone do responsável:</label>
+            <input
+              type="text"
+              id="telResp"
+              class="inputDados"
+              name=""
+              placeholder="Telefone do resposável:"
+              id=""
+              value="${equipe.telResp}"
+              disabled
+            />
+            <i
+              class="fas fa-edit fa-lg"
+              style="color: black; cursor: pointer"
+            ></i>
+          </div>
+          <hr />
+          <div class="dadosTecnicos">
+            <div class="container">
+              <h1 class="tituloDadosTecn">Dados técnicos</h1>
+
+              <label style="font-size: 20px">Técnico:</label>
               <input
                 type="text"
-                id="nomeResp"
+                id="tecnico"
                 class="inputDados"
                 name=""
-                placeholder="Nome do responsável:"
+                placeholder="Técnico:"
                 id=""
-                value="${equipe.nome}"
+                value="${equipe.tecnico}"
                 disabled
               />
               <i
                 class="fas fa-edit fa-lg"
                 style="color: black; cursor: pointer"
               ></i>
+
               <br>
-              
-              <label style="font-size: 20px; margin-top: 20px">Telefone do responsável:</label>
+              <label style="font-size: 20px; margin-top: 20px">Auxíliar Técnico:</label>
               <input
                 type="text"
-                id="telResp"
+                id="auxTecn"
                 class="inputDados"
                 name=""
-                placeholder="Telefone do resposável:"
+                placeholder="Auxíliar técnico"
                 id=""
-                value="${equipe.telResp}"
+                value="${equipe.auxTecnico}"
                 disabled
               />
               <i
                 class="fas fa-edit fa-lg"
                 style="color: black; cursor: pointer"
               ></i>
+
             </div>
-            <hr />
-            <div class="dadosTecnicos">
-              <div class="container">
-                <h1 class="tituloDadosTecn">Dados técnicos</h1>
-
-                <label style="font-size: 20px">Técnico:</label>
-                <input
-                  type="text"
-                  id="tecnico"
-                  class="inputDados"
-                  name=""
-                  placeholder="Técnico:"
-                  id=""
-                  value="${equipe.tecnico}"
-                  disabled
-                />
-                <i
-                  class="fas fa-edit fa-lg"
-                  style="color: black; cursor: pointer"
-                ></i>
-
-                <br>
-                <label style="font-size: 20px; margin-top: 20px">Auxíliar Técnico:</label>
-                <input
-                  type="text"
-                  id="auxTecn"
-                  class="inputDados"
-                  name=""
-                  placeholder="Auxíliar técnico"
-                  id=""
-                  value="${equipe.auxTecnico}"
-                  disabled
-                />
-                <i
-                  class="fas fa-edit fa-lg"
-                  style="color: black; cursor: pointer"
-                ></i>
-
-              </div>
-            </div>
-          </center>
-        `
-        )
-        .join("");
+          </div>
+        </center>
+      `
+          )
+          .join("");
+      }
     });
 }
 atualiza();
