@@ -5,11 +5,11 @@ function criarEquipe() {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: data
-  });
-  Swal.fire("Sucesso!", "Sua equipe foi criada!", "success");
-  setTimeout(function() {
+  }).then( data => {
+    console.log(data);
     window.location.href = "equipe";
-  }, 1500);
+    Swal.fire("Sucesso!", "Sua equipe foi criada!", "success");
+  });
 }
 
 function getCookie(k) {
