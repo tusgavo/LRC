@@ -5,10 +5,8 @@ function criarEquipe() {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: data
-  }).then( data => {
-    console.log(data);
-    window.location.href = "equipe";
-    Swal.fire("Sucesso!", "Sua equipe foi criada!", "success");
+  }).then(data => {
+    window.location.href = "equipe";  
   });
 }
 

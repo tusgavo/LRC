@@ -27,11 +27,14 @@ class BancoUtils {
     );
   }
 
-  static selectAtletas(id, cb) {
+  static selectAtletas(tb, id, cb) {
     con.query(
       `SELECT * FROM atletas a, equipes e
         WHERE a.id_equipe = e.id_equipe;
         AND e.id_usuario = ${id}`,
+      // `SELECT * FROM atletas a, equipes e
+      // WHERE a.id_equipe = e.id_equipe 
+      // AND e.id_usuario = ${id}`
       (err, res) => {
         if (err) throw err;
         cb(res);
