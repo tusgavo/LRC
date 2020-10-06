@@ -1,37 +1,3 @@
-// input Nome do responsável
-// document.getElementById("iconNomeResp").addEventListener("click", function() {
-//   document.getElementById("nomeResp").disabled = false;
-//   document.getElementById("nomeResp").focus();
-// });
-
-// //input Telefone do responsável
-
-// document.getElementById("iconTelResp").addEventListener("click", function() {
-//   document.getElementById("telResp").disabled = false;
-//   document.getElementById("telResp").focus();
-// });
-
-// //input email
-
-// document.getElementById("iconEmail").addEventListener("click", function() {
-//   document.getElementById("email").disabled = false;
-//   document.getElementById("email").focus();
-// });
-
-// //input técnico
-
-// document.getElementById("iconTecn").addEventListener("click", function() {
-//   document.getElementById("tecnico").disabled = false;
-//   document.getElementById("tecnico").focus();
-// });
-
-// // input auxiliar tecnico
-
-// document.getElementById("iconAuxTecn").addEventListener("click", function() {
-//   document.getElementById("auxTecn").disabled = false;
-//   document.getElementById("auxTecn").focus();
-// });
-
 let modalCriacao = null;
 let modalEdicao = null;
 document.addEventListener("DOMContentLoaded", function () {
@@ -42,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   modalDelecao = instances[2];
 });
 let informacoesEquipes = [];
-let infoEquipes = document.getElementById("informaçoesEquipe");
+let infoEquipes = document.getElementById("informacoesEquipe");
 
 function mostraModal(i) {
   modalEdicao.open();
@@ -76,11 +42,9 @@ function atualiza() {
             <label style="font-size: 20px; margin-top: 20px">Nome do responsável:</label>
             <input
               type="text"
-              id="nomeResp"
               class="inputDados"
               name=""
               placeholder="Nome do responsável:"
-              id=""
               value="${equipe.nome}"
               disabled
             />
@@ -89,11 +53,9 @@ function atualiza() {
             <label style="font-size: 20px; margin-top: 20px">Telefone do responsável:</label>
             <input
               type="text"
-              id="telResp"
               class="inputDados"
               name=""
               placeholder="Telefone do resposável:"
-              id=""
               value="${equipe.telResp}"
               disabled
             />
@@ -106,11 +68,9 @@ function atualiza() {
               <label style="font-size: 20px">Técnico:</label>
               <input
                 type="text"
-                id="tecnico"
                 class="inputDados"
                 name=""
                 placeholder="Técnico:"
-                id=""
                 value="${equipe.tecnico}"
                 disabled
               />
@@ -119,11 +79,9 @@ function atualiza() {
               <label style="font-size: 20px; margin-top: 20px">Auxíliar Técnico:</label>
               <input
                 type="text"
-                id="auxTecn"
                 class="inputDados"
                 name=""
                 placeholder="Auxíliar técnico"
-                id=""
                 value="${equipe.auxTecnico}"
                 disabled
               />

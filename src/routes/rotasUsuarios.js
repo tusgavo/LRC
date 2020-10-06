@@ -1,5 +1,4 @@
 const express = require("express");
-// const Equipe = require("../models/usuarios");
 const BancoUtils = require("../helpers/bancoUtils");
 const UsuarioDAO = require("../models/usuarioDAO");
 const Usuario = require("../models/usuarios");
@@ -9,10 +8,11 @@ const routers = express.Router();
 
 routers.post("/auth", (req, res) => {
   const usuario = new Usuario(req.body);
-  new UsuarioDAO().autenticacaoUsuarioESenha(usuario, resposta => {
+  new UsuarioDAO().autenticacaoUsuarioESenha(usuario, (resposta) => {
     if (resposta.length > 0) {
       const usuarioId = resposta[0].id_usuario;
       res.cookie("id_usuario", usuarioId);
+      
       const token = jwt.sign(
         {
           email: resposta[0].email,
@@ -29,14 +29,14 @@ routers.post("/auth", (req, res) => {
 });
 
 routers.get("/", (req, res) => {
-  BancoUtils.select(Usuario.tabela, usuarios => {
+  BancoUtils.select(Usuario.tabela, (usuarios) => {
     res.json(usuarios);
   });
 });
 
 routers.post("/", (req, res) => {
   const usuario = new Usuario(req.body);
-  BancoUtils.insert(usuario, Usuario.tabela, r => {
+  BancoUtils.insert(usuario, Usuario.tabela, (r) => {
     res.json(r);
   });
 });
@@ -47,7 +47,7 @@ routers.put("/", (req, res) => {
     usuarioNovo,
     Usuario.tabela,
     { key: "id_usuario", value: usuarioNovo.id_usuario },
-    r => {
+    (r) => {
       res.json(r);
     }
   );
@@ -57,7 +57,7 @@ routers.delete("/:id_usuario", (req, res) => {
   BancoUtils.delete(
     Usuario.tabela,
     { key: "id_usuario", value: req.params.id_usuario },
-    r => {
+    (r) => {
       res.json(r);
     }
   );

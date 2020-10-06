@@ -16,7 +16,6 @@ class BancoUtils {
   }
 
   static selectEquipes(tb, pk, id, cb) {
-    // console.log(`SELECT * FROM ${tb} WHERE ${pk} = ${id}`);
     con.query(
       `SELECT * FROM ${tb} 
         WHERE ${pk} = ${id}`,
@@ -30,7 +29,7 @@ class BancoUtils {
   static selectAtletas(tb, id, cb) {
     con.query(
       `SELECT * FROM atletas a, equipes e
-        WHERE a.id_equipe = e.id_equipe;
+        WHERE a.id_equipe = e.id_equipe
         AND e.id_usuario = ${id}`,
       // `SELECT * FROM atletas a, equipes e
       // WHERE a.id_equipe = e.id_equipe 

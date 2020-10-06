@@ -20,6 +20,7 @@ routers.get("/", (req, res) => {
         if (equipeUsuario.length === 0) {
           res.json({ sucesso: false });
         } else {
+          res.cookie("id_equipe", equipeUsuario[0].id_equipe);
           res.json(r);
         }
       }

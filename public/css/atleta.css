@@ -128,7 +128,11 @@ header {
   color: #fff !important;
   background-color: darkblue !important;
   border-color: darkblue !important;
+  border-radius: 15px !important;
   margin-bottom: 30px;
+}
+.btn-primary:hover {
+  box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75) !important;
 }
 
 .modal {
@@ -142,6 +146,7 @@ header {
 
 .modal-close {
   background-color: darkblue !important;
+  border-radius: 15px !important;
 }
 
 .modal-close:hover {
@@ -160,7 +165,7 @@ header {
 
 .modalAdd {
   width: 50% !important;
-  height: 370px !important;
+  height: 430px !important;
 }
 
 .btn {

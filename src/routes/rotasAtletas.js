@@ -5,7 +5,6 @@ const routers = express.Router();
 
 routers.get("/", (req, res) => {
   var idUsuario = req.cookies["id_usuario"];
-  console.log(idUsuario);
   BancoUtils.selectAtletas(Atleta.tabela, idUsuario, atletas => {
     res.json(atletas);
   });

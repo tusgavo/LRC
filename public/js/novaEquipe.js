@@ -11,18 +11,18 @@ function criarEquipe() {
 }
 
 function getCookie(k) {
-  var c = String(document.cookie).split(";");
-  var neq = k + "=";
+  var cookieSplited = String(document.cookie).split(";");
+  var key = k + "=";
 
-  for (var i = 0; i < c.length; i++) {
-    var d = c[i];
+  for (var i = 0; i < cookieSplited.length; i++) {
+    var cookie = cookieSplited[i];
 
-    while (d.charAt(0) === " ") {
-      c[i] = c[i].substring(1, d.length);
+    while (cookie.charAt(0) === " ") {
+      cookie = cookie.substring(1, cookie.length);
     }
 
-    if (c[i].indexOf(neq) === 0) {
-      return decodeURIComponent(c[i].substring(neq.length, c[i].length));
+    if (cookie.indexOf(key) === 0) {
+      return decodeURIComponent(cookie.substring(key.length, cookie.length));
     }
   }
 

@@ -1,6 +1,6 @@
 let modalCriacao = null;
 let modalEdicao = null;
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   var elems = document.querySelectorAll(".modal");
   var instances = M.Modal.init(elems, {});
   modalEdicao = instances[0];
@@ -24,8 +24,8 @@ function mostraModalDelecao(i) {
 }
 function atualiza() {
   fetch("/rotasAtletas")
-    .then(res => res.json())
-    .then(dados => {
+    .then((res) => res.json())
+    .then((dados) => {
       listaDeAtletas = dados;
       tabela.innerHTML = listaDeAtletas
         .map(
@@ -51,10 +51,10 @@ function criarAtleta() {
   fetch("/rotasAtletas", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: data
+    body: data,
   });
   Swal.fire("Sucesso!", "Seu atleta foi adicionado!", "success");
-  setTimeout(function() {
+  setTimeout(function () {
     window.location.reload();
   }, 1500);
 }
@@ -65,10 +65,10 @@ function editarAtleta() {
   fetch("/rotasAtletas", {
     method: "PUT",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: data
+    body: data,
   });
   Swal.fire("Sucesso!", "Seu atleta foi editado!", "success");
-  setTimeout(function() {
+  setTimeout(function () {
     window.location.reload();
   }, 1200);
 }
@@ -76,10 +76,33 @@ function editarAtleta() {
 function deletarAtleta() {
   const id = document.getElementById("dl-id_atleta").value;
   fetch("/rotasAtletas/" + id, {
-    method: "DELETE"
+    method: "DELETE",
   });
   Swal.fire("Sucesso!", "Seu atleta foi excluído!", "success");
-  setTimeout(function() {
+  setTimeout(function () {
     window.location.reload();
   }, 1600);
 }
+
+function getCookie(k) {
+  var cookieSplited = String(document.cookie).split(";");
+  var key = k + "=";
+
+  for (var i = 0; i < cookieSplited.length; i++) {
+    var cookie = cookieSplited[i];
+
+    while (cookie.charAt(0) === " ") {
+      cookie = cookie.substring(1, cookie.length);
+    }
+
+    if (cookie.indexOf(key) === 0) {
+      return decodeURIComponent(cookie.substring(key.length, cookie.length));
+    }
+  }
+
+  return null;
+}
+
+var idEquipe = getCookie("id_equipe");
+
+document.getElementById("cr-id_equipe").value = idEquipe;
