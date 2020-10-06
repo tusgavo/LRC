@@ -6,7 +6,7 @@ function criarEquipe() {
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: data
   }).then(data => {
-    window.location.href = "equipe";  
+    window.location.href = "equipe";
   });
 }
 
